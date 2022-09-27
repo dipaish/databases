@@ -1,0 +1,94 @@
+# Introduction to Database: 
+### What is a database? 
+
+- An ***organized  collection*** of related data (structured information) 
+    -  Stored in **logical and structured** manner
+    - Typically stored electronically in a computer system
+- Databases are everywhere 
+    - this course material is in the database
+    - points related to course assignments are recorded in the database
+    - if you do enough work on the course to achieve the learning objectives related to the course, your grade will be recorded in the database
+    - Application utilizes one or more databases
+- Databases can be **local** (located on the same machine)
+- Databases can be **external** (located on a separate server)
+- Information is retrieved from the database and presented to the end-user via an application  
+![database storing & retrieving information](assets/images/db.png)
+### What is Database Management System (DBMS) ?
+- A database management system is an application through which a user can create and maintain databases.
+    > Example: **MySQL**, Microsoft Access, Microsoft SQL Server, FileMaker Pro, Oracle Database, and dBASE
+
+- DBMS provides multiple functions for managing databases & its data. These functions can be classified as below: 
+    - **Data definition**: Organization of the data (creating, modifying & removing)
+     - **Update** – Insertion, modification, and deletion of the actual data.
+     - **Retrieval** – Getting data for presentation or further processing by an application.
+     - **Administration** – Managing database users, databases, enforcing data security, monitoring performance, maintaining data integrity, database backups
+- **MySQL is a popular, open-source DBMS**
+
+### Benefits of a Database System
+- Centralized data management.
+- Data duplication is reduced or managed.
+- Data inconsistency can be avoided.
+- Multiple users can access data, even at the same time.
+- Standardization is easier.
+- Data access rights can be secured.
+- Data is more reliable and accurate.
+- Different operating needs can be considered when building the system.
+- Easier deployment of new applications.
+- Provides mechanisms for data backup and recovery.
+
+
+### What is a Relational Database ?
+- A relational database is based on the ***relational data model.***
+- A relational database stores data in the form of rows and columns that forms an ***entity(table).***
+- It allows to store data across multiple table. Tables are related to each other ***(relationship)***
+
+- To interact with databases, it uses ***Structured Query Language (SQL)*** 
+ - SQL is used to store, modify and maintain the data.
+- It is the most common type of `DBMS`
+
+**Example of an entity/table**
+![relational data model](assets/images/relationalModel.png)
+
+# Database Design: 
+### What is Data Modeling? 
+> It is a process to define and analyze data requirements to support a certain busines sprocess or to serve a purpose. 
+- Before creating an actual database, you produce **three different types of data models**:
+    1. ***Conceptual Data Model***
+        - It is a highl level model.
+        - Think about the data requirements: what data your system contains? Take into account your stakeholders: application users & scope of your application 
+        - You are basically explaining the concept based on your data requirements & the relationship between the objects
+        -  The end result of the conceputal data model will be names such as `student`, `course`, `teacher`
+        - The relationship between the objects are simply shown by drawing a line between the objects.
+        - This model is done for wider audience that is it should be easy to understand for anyone looking the diagram. 
+        - **Hint: Represent data as a normal user will see it in the real world.** 
+        ##### Example of a Conceptual Data Model: A teacher will teach a course(s) and student can participate in a course(s).
+    ![Example of a Conceptual Data Model](assets/images/cmodel.png)
+
+    2. ***Logical Data Model***
+        - The logical data model defines the structure of the data.
+        - Each object is defined in details that is you inform about each of your object. In the above case, you need to define information for `student`, `course` & `teacher`
+        - You need to explain data types such as number or string for each of your data attribute.
+        - It also shows the relationships between objects. 
+    ##### Example of a Logic Data Model: Each object is defined in details. 
+     ![Example of a Logical Data Model](assets/images/logicModel.png)
+
+    3. ***Physical Data Model***
+        - It is describing a database specific implementation of the data model. 
+        - It is used to creata a database and required tables.
+        - It includes the name of the table & column names with [Data Types](https://dev.mysql.com/doc/refman/8.0/en/data-types.html). 
+        - Primary keys, foreign keys, views etc are also defined. 
+    ##### Example of a Physical Data Model: Each object is defined in details. 
+     ![Example of a Physical Data Model](assets/images/pmodel.png)
+
+> Note: We did not specificy primary or foreign key. Once we learn them, we will start to use them.
+
+### Hello world
+- create tables with draw.io
+- understand relationship and establish relationship between tables
+- Decide primary and foreign keys
+- Specify datatypes
+
+
+### References: 
+- https://en.wikipedia.org/wiki/Database Read on 27.09.2022
+- https://en.wikipedia.org/wiki/Data_modeling Read on 27.09.2022
