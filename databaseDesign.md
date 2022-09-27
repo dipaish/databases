@@ -82,6 +82,61 @@
 
 > Note: We did not specificy primary or foreign key. Once we learn them, we will start to use them.
 
+### PRIMARY KEY
+
+- The relational data model can not contain duplicate values. The duplicate values create ambiguities in retrieval, therefore  **primary key (PK)** is used to uniquely identify each record in a database table. 
+
+- **Common Rules for Primary Key**
+    - Must contain unique values and Not NULL
+    - Most tables have a primary key
+    - A table has only one primary key
+    - Primary key column’s type is often an integer type (INT or BIGINT)
+    - Primary key column often has AUTO_INCREMENT attribute that generates a unique sequence for the key automatically. 
+
+
+- Sometimes you have an obvious choice for selecting a primary key such as the registration number of a car, other times it can be difficult. 
+- One of the common solution for primary key is to allocate a number and use autoincrement (studentID, playerID, staffID)
+- It is possible to have a primary key that is made up of more that one attribute which is called a **composite primary key**
+
+#### Now lets update our Data Model by including primary key
+
+##### Example of a Physical Data Model: Each object is defined in details. 
+![Example of a Physical Data Model](assets/images/pkmodel.png)
+
+### COMPOSITE KEY
+
+- It is made up of more than one attribute
+
+![Composite Key](assets/images/ckey.png)
+- In the above table, none of the attributes can be guaranteed to be unique 
+    - A student however is enrolled for a course therefore the combination of Course and StudentId will be unique. 
+    - Combining these two attributes will form a **composite primary key**
+- To avoid the **composite key**, you may create a new attribute enrollmentID as an integer & make it autoincrement. However, this will create an extra (unnecessary column), therefore a more effective choice is a **composite key.**
+
+
+### FOREIGN KEY
+
+### ENTITY RELATIONSHIP DIAGRAM
+- It is a top-down technique for visualizing and understanding the entities and the relationships between them. 
+- An **entity–relationship diagram (or ER diagram)** describes 
+    - the entities
+    - logical structure of the entities (attributes) and 
+    - relationships between the entities
+- Each **entity** in an ER diagram is represented by a rectangle. 
+- **Relationship** is an association between two o rmore entities.
+ `Example: the relation between the course and student table is that a student can enroll to one or many coourses.` ***It is shown by a line and can be one of the three types***
+    - One-to-one relationship (It is not very common type of relationship)
+    - **One-to-many relationship** (The most common type of relationship )
+    - Many-to-many relationship (It is not ideal in the database design)
+
+#### One-to-one relationship
+
+As the name suggests, one 
+#### One-to-many relationship
+#### Many-to-many relationship
+
+### RELATIONSHIPS IN DATABASE DESIGN
+
 ### Hello world
 - create tables with draw.io
 - understand relationship and establish relationship between tables
