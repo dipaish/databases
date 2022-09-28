@@ -159,12 +159,13 @@
 
 #### How to handle Many-to-many relationship in database design?
 - Lets think about the **student** and **course** tables, ***a student can enroll in many courses and a course has many students***. 
-
-     -The relationship in this case is many to many relationship ***which is not an ideal situation in database design as it becomes difficult to manage many to many relationship using those two tables***. 
+     - The relationship in this case is many to many relationship ***which is not an ideal situation in database design as it becomes difficult to manage many to many relationship using those two tables***. 
      - To store data effectively, we can think of a adjoining table that relates both of those two tables by establishing one to many relationship. 
      - ***In practice, the many-to-many relationship is implemented as two one-to-many relationships, with the introduction of the adjoining (junction) table.***
+        - One student can have one to many enrollments. 
+        - A course can have one to many enrollments.
 
-
+![many-to-many relationship](assets/images/new.png)
 ### RELATIONSHIPS IN DATABASE DESIGN
 
 ### Hello world
