@@ -5,7 +5,6 @@
     -  Stored in **logical and structured** manner
     - Typically stored electronically in a computer system
 - Databases are everywhere 
-    - this course material is in the database
     - points related to course assignments are recorded in the database
     - if you do enough work on the course to achieve the learning objectives related to the course, your grade will be recorded in the database
     - Application utilizes one or more databases
@@ -52,31 +51,39 @@
 # Database Design: 
 ### What is Data Modeling? 
 > It is a process to define and analyze data requirements to support a certain busines sprocess or to serve a purpose. 
-- Before creating an actual database, you produce **three different types of data models**:
-    1. ***Conceptual Data Model***
-        - It is a highl level model.
-        - Think about the data requirements: what data your system contains? Take into account your stakeholders: application users & scope of your application 
-        - You are basically explaining the concept based on your data requirements & the relationship between the objects
-        -  The end result of the conceputal data model will be names such as `student`, `course`, `teacher`
-        - The relationship between the objects are simply shown by drawing a line between the objects.
-        - This model is done for wider audience that is it should be easy to understand for anyone looking the diagram. 
+#### Tools for Data modeling
+You may use any of the following options:
+- A piece of paper and a pen to model your database. 
+- **Lucidchart:** https://www.lucidchart.com/ The free option is enough for us to design our databases. (***I am using Lucidchart***)
+- Draw.io https://app.diagrams.net/
+
+***Before creating an actual database, you produce three different types of data models:***
+
+1. ***Conceptual Data Model***
+     - It is a highl level model.
+    - Think about the data requirements: what data your system contains? Take into account your stakeholders: application users & scope of your application 
+    - You are basically explaining the concept based on your data requirements & the relationship between the objects
+    -  The end result of the conceputal data model will be names such as `student`, `course`, `teacher`
+    - The relationship between the objects are simply shown by drawing a line between the objects.
+     - This model is done for wider audience that is it should be easy to understand for anyone looking the diagram. 
         - **Hint: Represent data as a normal user will see it in the real world.** 
         ##### Example of a Conceptual Data Model: A teacher will teach a course(s) and student can participate in a course(s).
     ![Example of a Conceptual Data Model](assets/images/cmodel.png)
 
-    2. ***Logical Data Model***
-        - The logical data model defines the structure of the data.
-        - Each object is defined in details that is you inform about each of your object. In the above case, you need to define information for `student`, `course` & `teacher`
-        - You need to explain data types such as number or string for each of your data attribute.
-        - It also shows the relationships between objects. 
+2. ***Logical Data Model***
+    - The logical data model defines the structure of the data.
+    - Each object is defined in details that is you inform about each of your object. In the above case, you need to define information for `student`, `course` & `teacher`
+    - You need to explain data types such as number or string for each of your data attribute.
+    - It also shows the relationships between objects. 
     ##### Example of a Logic Data Model: Each object is defined in details. 
      ![Example of a Logical Data Model](assets/images/logicModel.png)
 
-    3. ***Physical Data Model***
-        - It is describing a database specific implementation of the data model. 
-        - It is used to creata a database and required tables.
-        - It includes the name of the table & column names with [Data Types](https://dev.mysql.com/doc/refman/8.0/en/data-types.html). 
-        - Primary keys, foreign keys, views etc are also defined. 
+3. ***Physical Data Model***
+    - It is describing a database specific implementation of the data model. 
+    - It is used to creata a database and required tables.
+    - It includes the name of the table & column names with [Data Types](https://dev.mysql.com/doc/refman/8.0/en/data-types.html). 
+    - Primary keys, foreign keys, views etc are also defined. 
+    
     ##### Example of a Physical Data Model: Each object is defined in details. 
      ![Example of a Physical Data Model](assets/images/pmodel.png)
 
@@ -166,8 +173,41 @@
         - A course can have one to many enrollments.
 
 ![many-to-many relationship](assets/images/new.png)
-### RELATIONSHIPS IN DATABASE DESIGN
+---
 
+##  Database Design Process
+
+**Step 1:Requirement Analysis - Define the purpose of the Database**
+- ***You can think of questions such as***
+    - Why do you need a database?
+    - What data you will be storing? 
+    - What kind of entities you might need?
+
+**End result: Conceptual Model**
+
+**Step 2: Define the attributes of the entities that you discovered from Step 1** 
+- ***You may do the following activities***
+    - List column names (attributes)
+    - Specify data types such as number, text etc. 
+    - Specify **Primary Key** for each **entity**. 
+
+**End result: Logical Data Model**
+
+**Step 3: Define relationships among tables**
+
+- ***You may do the following activities***
+    - Specify data types such as VARCHAR, INT, BOOLEAN.
+    - Specify Foreign Keys
+    - Define what kind of relationship exist between tables. 
+
+**End result: ER Diagram / Database Model**
+
+---
+
+#### Example 1: A simple Database for a library
+> Now let's put all pieces what we have learnt so far and create a database design for a library.
+- Library has several books and items to loan. 
+- Think of the entities: `book` 
 ### Hello world
 - create tables with draw.io
 - understand relationship and establish relationship between tables
