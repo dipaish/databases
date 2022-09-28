@@ -93,7 +93,6 @@
     - Primary key column’s type is often an integer type (INT or BIGINT)
     - Primary key column often has AUTO_INCREMENT attribute that generates a unique sequence for the key automatically. 
 
-
 - Sometimes you have an obvious choice for selecting a primary key such as the registration number of a car, other times it can be difficult. 
 - One of the common solution for primary key is to allocate a number and use autoincrement (studentID, playerID, staffID)
 - It is possible to have a primary key that is made up of more that one attribute which is called a **composite primary key**
@@ -113,7 +112,6 @@
     - Combining these two attributes will form a **composite primary key**
 - To avoid the **composite key**, you may create a new attribute enrollmentID as an integer & make it autoincrement. However, this will create an extra (unnecessary column), therefore a more effective choice is a **composite key.**
 
-
 ### FOREIGN KEY
 
 ### ENTITY RELATIONSHIP DIAGRAM
@@ -131,9 +129,41 @@
 
 #### One-to-one relationship
 
-As the name suggests, one 
+- As the name suggests, **One-to-one** refers to the association between two entities(tables) A & B in which one element from A is linked to one element of B. 
+- In the **relational model**, it means that one row in a table is linked with only one row in another table and vice versa.
+![One-to-one relationship](assets/images/onetoone.png)
+> Examples:
+
+    - Your address has only 1 postal code. 
+    - Each course has only 1 capital city.
+
+
 #### One-to-many relationship
+- **One-to-many** refers to the association between two entities(tables) A & B in which one element from A is linked to multiple elements of B.
+- In the **relational model**, it means that one row in a table is linked with many rows in another table and vice versa.
+- It is the most commmon type of relationship. 
+![One-to-many relationship](assets/images/om.png)
+> Examples:
+
+    - A city has multiple Zip codes
+    - A teacher can teach many courses. 
+
+
 #### Many-to-many relationship
+
+- **Many-to-many** refers to the association between  entities(tables)  in which many elements from one entity are linked to many elements in another entity.
+- In the **relational model**, it means that multiple rows in a table are linked with multiple rows in another table and vice versa.
+![many-to-many relationship](assets/images/mtm.png)    
+
+
+
+#### How to handle Many-to-many relationship in database design?
+- Lets think about the **student** and **course** tables, ***a student can enroll in many courses and a course has many students***. 
+
+     -The relationship in this case is many to many relationship ***which is not an ideal situation in database design as it becomes difficult to manage many to many relationship using those two tables***. 
+     - To store data effectively, we can think of a adjoining table that relates both of those two tables by establishing one to many relationship. 
+     - ***In practice, the many-to-many relationship is implemented as two one-to-many relationships, with the introduction of the adjoining (junction) table.***
+
 
 ### RELATIONSHIPS IN DATABASE DESIGN
 
