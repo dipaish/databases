@@ -314,7 +314,7 @@ The table student_info does not meet the requirements of 1NF because
 
    ![Simple Grading System](assets/images/sg1.png)
 
-### References: 
+## References: 
 - https://en.wikipedia.org/wiki/Database 
 - https://en.wikipedia.org/wiki/Data_modeling 
 - MySQL Reference Manual: https://dev.mysql.com/doc/refman/8.0/en/ 
