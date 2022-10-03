@@ -129,7 +129,7 @@ DROP DATABASE [IF EXISTS] database_name;
 ```
 ***Example 1: To delete the database mydb1***
 
-```sql
+```ps
 DROP DATABASE mydb1;
 ```
 
