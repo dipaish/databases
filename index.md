@@ -1,4 +1,4 @@
-# Getting Started with Databases
+# Getting Started with Databases - CH1
 ## What is MySQL?
 - The most popular Open Source database management system
 - Developed, distributed & supported by Oracle Corporation
