@@ -303,11 +303,17 @@ The table student_info does not meet the requirements of 1NF because
 - Each foreign key in a table(child table) must match to a primary key in the referenced table (parent table)
 - Inserting with a foreign key is only possible if the value exists in the partent table.
 
-### Example 1: A simple Database for a library
-> Now let's put all pieces what we have learnt so far and create a database design for a library.
-- Library has several books and items to loan. 
-- Think of the entities: `book` 
+#### Example 1: Grading System 
+
+**A simple database design for course enrollment and grading system.**
+
+> Now let's put all pieces what we have learnt so far and create a database design for enrolling and grading a course. 
+- Grading includes courses, enrollments, teachers and students
+- Think of the entities such as : `student`,`course`,`enrollment`,`grade`,`teacher`,
+
+   ![Simple Grading System](assets/images/sg1.png)
 
 ### References: 
-- https://en.wikipedia.org/wiki/Database Read on 27.09.2022
-- https://en.wikipedia.org/wiki/Data_modeling Read on 27.09.2022
+- https://en.wikipedia.org/wiki/Database 
+- https://en.wikipedia.org/wiki/Data_modeling 
+- MySQL Reference Manual: https://dev.mysql.com/doc/refman/8.0/en/ 
