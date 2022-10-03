@@ -1,4 +1,4 @@
-# Introduction to Database: 
+# Introduction to Database
 ### What is a database? 
 
 - An ***organized  collection*** of related data (structured information) 
@@ -48,10 +48,47 @@
 **Example of an entity/table**
 ![relational data model](assets/images/relationalModel.png)
 
-# Database Design: 
+## Database Design: 
 ### What is Data Modeling? 
 > It is a process to define and analyze data requirements to support a certain busines sprocess or to serve a purpose. 
-#### Tools for Data modeling
+
+###  Database Design Process
+
+**Step 1: Requirement Analysis - Define the purpose of the Database**
+- ***You can think of questions such as***
+    - Why do you need a database?
+    - What data you will be storing? 
+    - What kind of entities you might need?
+
+**End result: Conceptual Model**
+
+**Step 2: Define the attributes of the entities that you discovered from Step 1** 
+- ***You may do the following activities***
+    - List column names (attributes)
+    - Specify data types such as number, text etc. 
+    - Specify **Primary Key** for each **entity**. 
+
+**End result: Logical Data Model**
+
+**Step 3: Define relationships among tables**
+
+- ***You may do the following activities***
+    - Specify data types such as VARCHAR, INT, BOOLEAN.
+    - Specify Foreign Keys
+    - Define what kind of relationship exist between tables. 
+
+**End result: ER Diagram / Database Model**
+
+**Step 4: Normalize your design**
+**You may do the following activities***
+    - Check atleast your table meets 3NF
+    - If required, break bigger tables into smaller ones
+    - You might also need to add more columns
+
+**End result: ER Diagram / Database Model**
+
+---
+### Tools for Data modeling
 You may use any of the following options:
 - A piece of paper and a pen to model your database. 
 - **Lucidchart:** https://www.lucidchart.com/ The free option is enough for us to design our databases. (***I am using Lucidchart***)
@@ -89,7 +126,7 @@ You may use any of the following options:
 
 > Note: We did not specificy primary or foreign key. Once we learn them, we will start to use them.
 
-### PRIMARY KEY (PK)
+#### PRIMARY KEY (PK)
 
 - The relational data model can not contain duplicate values. The duplicate values create ambiguities in retrieval, therefore  **primary key (PK)** is used to uniquely identify each record in a database table. 
 
@@ -104,12 +141,13 @@ You may use any of the following options:
 - One of the common solution for primary key is to allocate a number and use autoincrement (studentID, playerID, staffID)
 - It is possible to have a primary key that is made up of more that one attribute which is called a **composite primary key**
 
-#### Now lets update our Data Model by including primary key
+***Now lets update our Data Model by including primary key***
 
-##### Example of a Physical Data Model: Each object is defined in details. 
+***Example of a Physical Data Model: Each object is defined in details.***
+
 ![Example of a Physical Data Model](assets/images/pkmodel.png)
 
-### COMPOSITE KEY
+#### COMPOSITE KEY
 
 - It is made up of more than one attribute
 
@@ -119,7 +157,7 @@ You may use any of the following options:
     - Combining these two attributes will form a **composite primary key**
 - To avoid the **composite key**, you may create a new attribute enrollmentID as an integer & make it autoincrement. However, this will create an extra (unnecessary column), therefore a more effective choice is a **composite key.**
 
-### FOREIGN KEY (FK)
+#### FOREIGN KEY (FK)
 
 
 - It is the primary key field of one table, that is stored in another table for the purpose of creating a link (join) between the tables.
@@ -184,7 +222,7 @@ You may use any of the following options:
 
 ![many-to-many relationship](assets/images/new.png)
 ---
-## Normalization 
+### Normalization 
 - Normalization is the process of organizing data (attributes of the database) to 
 reduce the **redundancy of data** in the table and to improve the **integrity of data**. It also helps to reduce data duplication. The goal is check if the database is optimal and structurally correct. 
 - ***What is data redundancy in database?***
@@ -238,41 +276,14 @@ The table student_info does not meet the requirements of 1NF because
 
     ![3NF](assets/images/3nf2.png)
 
-##  Database Design Process
 
-**Step 1:Requirement Analysis - Define the purpose of the Database**
-- ***You can think of questions such as***
-    - Why do you need a database?
-    - What data you will be storing? 
-    - What kind of entities you might need?
 
-**End result: Conceptual Model**
-
-**Step 2: Define the attributes of the entities that you discovered from Step 1** 
-- ***You may do the following activities***
-    - List column names (attributes)
-    - Specify data types such as number, text etc. 
-    - Specify **Primary Key** for each **entity**. 
-
-**End result: Logical Data Model**
-
-**Step 3: Define relationships among tables**
-
-- ***You may do the following activities***
-    - Specify data types such as VARCHAR, INT, BOOLEAN.
-    - Specify Foreign Keys
-    - Define what kind of relationship exist between tables. 
-
-**End result: ER Diagram / Database Model**
-
-**Step 4: Normalize **
-
----
-
-#### Example 1: A simple Database for a library
+### Example 1: A simple Database for a library
 > Now let's put all pieces what we have learnt so far and create a database design for a library.
 - Library has several books and items to loan. 
 - Think of the entities: `book` 
+
+
 ### Hello world
 - create tables with draw.io
 - understand relationship and establish relationship between tables
