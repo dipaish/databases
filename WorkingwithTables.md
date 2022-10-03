@@ -1,5 +1,24 @@
 # Working with Tables - CH3
 ### CREATE TABLE
+- `CREATE TABLE` statement is used to create a table within a database. 
+
+- ***Always remember to select a database before executing any SQL statement***
+**Syntax**
+
+```ps
+CREATE TABLE table_name
+(
+column_name1 data_type(size),
+column_name2 data_type(size),
+column_name3 data_type(size),
+...
+);
+```
+***Example 1: To create a table named teacher***
+
+```ps
+DROP DATABASE mydb1;
+```
 ### DESCRIBE [table_name];
 ### DROP TABLE
 ### ALTER TABLE
