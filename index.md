@@ -139,3 +139,20 @@ DROP DATABASE mydb1;
 ```ps
 SELECT DATABASE();
 ```
+### SHOW TABLES
+- Displays the list of tables in the selected database
+
+```ps
+SHOW TABLES();
+```
+### SQL Comments
+- You can use comments to explain your SQL staements. 
+```ps
+-- this is a single line comment
+# this is also a single line comment 
+/* 
+this is a multiple
+line 
+comment.
+*/
+```
