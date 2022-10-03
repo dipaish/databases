@@ -1,6 +1,5 @@
 
-# Installing MySQL Database Server & MySQL Workbench
-# Connecting to MySQL server
+
 
 
 ### SHOW tables; 
