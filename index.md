@@ -30,7 +30,7 @@
         - Meant for production use
         - **Use the most recent GA release (recommended)**
 
-***Read More: https://dev.mysql.com/doc/refman/8.0/en/installing.html ***
+**Read More: https://dev.mysql.com/doc/refman/8.0/en/installing.html**
 
 ### Installing MySQL 8.0 with Docker in Windows
 
@@ -91,11 +91,11 @@ PS D:\dataService> docker-compose up -d
 - Use meaningful and descriptive name for databases.The best practice is to use lowercase letters for your database names.
 
 **Syntax**
-```sql
+```ps
 CREATE DATABASE Database_Name;
 ```
 ***Example 1: To create a database named mydb1***
-```sql
+```ps
 CREATE DATABASE mydb1;
 ```
 ### USE DATABASE_NAME 
@@ -104,17 +104,17 @@ CREATE DATABASE mydb1;
 - After selecting the database, operations such as querying data, creating new tables will take effects on the current database.
 
 **Syntax**
-```sql
+```ps
 USE Database_Name;
 ```
 ***Example 1: To set the working database to mydb1***
-```sql
+```ps
 USE mydb1;
 ```
 ### SHOW DATABASES
 - To display all databases on the database server 
 
-```sql
+```ps
 SHOW DATABASES;
 ```
 
@@ -124,7 +124,7 @@ SHOW DATABASES;
 
 **Syntax**
 
-```sql
+```ps
 DROP DATABASE [IF EXISTS] database_name;
 
 ```
@@ -136,6 +136,6 @@ DROP DATABASE mydb1;
 ### SELECT DATABASE_NAME
 - To see which database is currently selected.
 
-```sql
+```ps
 SELECT DATABASE();
 ```
