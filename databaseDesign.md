@@ -1,4 +1,4 @@
-# Introduction to Database
+## Introduction to Database
 ### What is a database? 
 
 - An ***organized  collection*** of related data (structured information) 
@@ -94,9 +94,10 @@ You may use any of the following options:
 - **Lucidchart:** https://www.lucidchart.com/ The free option is enough for us to design our databases. (***I am using Lucidchart***)
 - Draw.io https://app.diagrams.net/
 
+### Types of Data Models
 ***Before creating an actual database, you produce three different types of data models:***
 
-1. ***Conceptual Data Model***
+#### 1. ***Conceptual Data Model***
      - It is a highl level model.
     - Think about the data requirements: what data your system contains? Take into account your stakeholders: application users & scope of your application 
     - You are basically explaining the concept based on your data requirements & the relationship between the objects
@@ -107,7 +108,7 @@ You may use any of the following options:
         ##### Example of a Conceptual Data Model: A teacher will teach a course(s) and student can participate in a course(s).
     ![Example of a Conceptual Data Model](assets/images/cmodel.png)
 
-2. ***Logical Data Model***
+#### 2. ***Logical Data Model***
     - The logical data model defines the structure of the data.
     - Each object is defined in details that is you inform about each of your object. In the above case, you need to define information for `student`, `course` & `teacher`
     - You need to explain data types such as number or string for each of your data attribute.
@@ -115,7 +116,7 @@ You may use any of the following options:
     ##### Example of a Logic Data Model: Each object is defined in details. 
      ![Example of a Logical Data Model](assets/images/logicModel.png)
 
-3. ***Physical Data Model***
+#### 3. ***Physical Data Model***
     - It is describing a database specific implementation of the data model. 
     - It is used to creata a database and required tables.
     - It includes the name of the table & column names with [Data Types](https://dev.mysql.com/doc/refman/8.0/en/data-types.html). 
@@ -126,7 +127,7 @@ You may use any of the following options:
 
 > Note: We did not specificy primary or foreign key. Once we learn them, we will start to use them.
 
-#### PRIMARY KEY (PK)
+### PRIMARY KEY (PK)
 
 - The relational data model can not contain duplicate values. The duplicate values create ambiguities in retrieval, therefore  **primary key (PK)** is used to uniquely identify each record in a database table. 
 
@@ -147,7 +148,7 @@ You may use any of the following options:
 
 ![Example of a Physical Data Model](assets/images/pkmodel.png)
 
-#### COMPOSITE KEY
+### COMPOSITE KEY
 
 - It is made up of more than one attribute
 
@@ -157,7 +158,7 @@ You may use any of the following options:
     - Combining these two attributes will form a **composite primary key**
 - To avoid the **composite key**, you may create a new attribute enrollmentID as an integer & make it autoincrement. However, this will create an extra (unnecessary column), therefore a more effective choice is a **composite key.**
 
-#### FOREIGN KEY (FK)
+### FOREIGN KEY (FK)
 
 
 - It is the primary key field of one table, that is stored in another table for the purpose of creating a link (join) between the tables.
@@ -183,7 +184,7 @@ You may use any of the following options:
     - One-to-one relationship (It is not very common type of relationship)
     - **One-to-many relationship** (The most common type of relationship )
     - Many-to-many relationship (It is not ideal in the database design)
-
+### Types of relationships
 #### One-to-one relationship
 
 - As the name suggests, **One-to-one** refers to the association between two entities(tables) A & B in which one element from A is linked to one element of B. 
@@ -212,7 +213,7 @@ You may use any of the following options:
 - In the **relational model**, it means that multiple rows in a table are linked with multiple rows in another table and vice versa.
 ![many-to-many relationship](assets/images/mtm.png)    
 
-#### How to handle Many-to-many relationship in database design?
+### How to handle Many-to-many relationship in database design?
 - Lets think about the **student** and **course** tables, ***a student can enroll in many courses and a course has many students***. 
      - The relationship in this case is many to many relationship ***which is not an ideal situation in database design as it becomes difficult to manage many to many relationship using those two tables***. 
      - To store data effectively, we can think of a adjoining table that relates both of those two tables by establishing one to many relationship. 
@@ -222,7 +223,7 @@ You may use any of the following options:
 
 ![many-to-many relationship](assets/images/new.png)
 ---
-### Normalization 
+## Normalization 
 - Normalization is the process of organizing data (attributes of the database) to 
 reduce the **redundancy of data** in the table and to improve the **integrity of data**. It also helps to reduce data duplication. The goal is check if the database is optimal and structurally correct. 
 - ***What is data redundancy in database?***
@@ -276,7 +277,7 @@ The table student_info does not meet the requirements of 1NF because
 
     ![3NF](assets/images/3nf2.png)
 
-### Anomalies
+## Anomalies
 - An anomaly is something that deviates from what is standard, normal or expected
 - Anomalies arise when data operations such as inserting, deleting or updating records result in unexpected errors
     - Insertion Anomalies
@@ -288,22 +289,22 @@ The table student_info does not meet the requirements of 1NF because
 
 > ***On normalizing your data to third form (3NF), anomalies are eliminated***
 
-### Intergrity Rules
+## Intergrity Rules
 - Integrity rules are very important for a good database design. 
 - RDBMS enforce entigrity rules automat
 
-#### Entity integrity
+### Entity integrity
 - All primary key entries are unique and not null. 
 - All entities must have some sort of unique idetification.
 - For a composite key which is made up of several columns, none of the column can contain Null.
 - All foreign key values are properly referencing primary key valuues.
 
-#### Referential Integrity
+### Referential Integrity
 - The referential integrity is specified between tables (relationship) to ensure the consistencey among tuples(records) of the tables. 
 - Each foreign key in a table(child table) must match to a primary key in the referenced table (parent table)
 - Inserting with a foreign key is only possible if the value exists in the partent table.
 
-#### Example 1: Grading System 
+## Example 1: Grading System 
 
 **A simple database design for course enrollment and grading system.**
 
