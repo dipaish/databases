@@ -15,6 +15,8 @@ topnav_dropdowns:
           url: /WorkingwithTables
         - title: Insert into Table
           url: /insertInto
+        - title: Alter Table
+          url: /alterTable
         - title: Update
           url: /p1_landing_page.html
         - title: Delete

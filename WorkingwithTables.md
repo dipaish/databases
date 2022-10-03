@@ -1,4 +1,4 @@
-# Working with Tables
+# Working with Tables - CH3
 ### CREATE TABLE
 ### DESCRIBE [table_name];
 ### DROP TABLE
