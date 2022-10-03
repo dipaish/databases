@@ -16,7 +16,7 @@
 - Localization (support for several characters set (scandavian characters: Ä Ö Å ), Error messages to clients in many languages)
 - Clients & Tools (Command line programs such as mysqldump & mysqladmin, GUI programs such as MySQL Workbench)
 
-### How to install MySQL 8.0 ?
+## How to install MySQL 8.0 ?
 
 **Quick Installation Guide**
 - MySQL: available for a number of OS & platforms
@@ -31,7 +31,7 @@
 
 ***Read More: https://dev.mysql.com/doc/refman/8.0/en/installing.html ***
 
-#### Installing MySQL 8.0 with Docker in Windows
+### Installing MySQL 8.0 with Docker in Windows
 
 > Note: Please ensure that you have Docker Desktop installed in your device and the docker engine is running. 
 
@@ -58,12 +58,12 @@ PS D:\dataService> docker-compose up -d
 - To remove all docker containers in the repository `Docker-compose down`
 
 
-#### Installing MySQL Workbench 
+## Installing MySQL Workbench 
 Step 1: Get to this link (https://dev.mysql.com/downloads/workbench/) and download MySQL Workbench **Windows (x86, 64-bit), MSI Installer** & install MySQL Workbench. 
 
 ![download MySQL Workbench](assets/images/wb1.png)
 
-#### How to connect to the Database server in Docker container using MySQL Workbench?
+## How to connect to the Database server in Docker container using MySQL Workbench?
 
 ***Now that we have the necessary tools, we will use MySQL Workbench to connect to the database service running in a docker container.***
 
@@ -78,12 +78,12 @@ PS D:\dataService> docker-compose up -d
 - Step 3: Double Click on the newly created connection and type in your password.  
 ![connect to the database server](assets/images/dc33.png)
 
-### Writing your first SQL statement
+## Writing your first SQL statement
 - ***Create a simple database named fname_lname***
 ![connect to the database server](assets/images/sqleditor.png)
 
 # Working with Databases
-#### CREATE DATABASE: To create a database
+### CREATE DATABASE: To create a database
 - **CREATE DATABASE** statement is used to create a database.
 - To create a database, you need to have the CREATE privilege for the database
 - If the database already exists, you will get an error message when not specifying  **IF NOT EXISTS** clause
@@ -97,12 +97,12 @@ CREATE DATABASE Database_Name;
 ```sql
 CREATE DATABASE mydb1;
 ```
-#### USE DATABASE_NAME: To set the Working/Default Database: 
+### USE DATABASE_NAME: To set the Working/Default Database: 
 - In order to work with the database, you must always specify the database to work with. 
 - Creating a database does not make it a current database. 
 
-#### SHOW DATABASES;
+### SHOW DATABASES;
 
-#### drop DATABASES;
+### drop DATABASES;
 
-#### MySQL select database;
+### MySQL select database;
