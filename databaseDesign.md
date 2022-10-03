@@ -219,7 +219,7 @@ You may use any of the following options:
 - In the **relational model**, it means that multiple rows in a table are linked with multiple rows in another table and vice versa.
 ![many-to-many relationship](assets/images/mtm.png)    
 
-## How to handle Many-to-many relationship in database design?
+### How to handle Many-to-many relationship in database design?
 - Lets think about the **student** and **course** tables, ***a student can enroll in many courses and a course has many students***. 
      - The relationship in this case is many to many relationship ***which is not an ideal situation in database design as it becomes difficult to manage many to many relationship using those two tables***. 
      - To store data effectively, we can think of a adjoining table that relates both of those two tables by establishing one to many relationship. 
