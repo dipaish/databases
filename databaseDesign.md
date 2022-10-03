@@ -229,9 +229,14 @@ The table student_info does not meet the requirements of 1NF because
 ### Third Normal Form (3NF)
 - It is the third stage of the normalization process.
 - The first requirements is that it meets all conditions for **2NF**
-- 
+- The non key columns are independent of each others that is the non key columns are dependent only on the primary key. ***There must not be any transitive dependency that is non-key dependencies.*** You don’t have any data that depends on fields that are not designated a primary key or part of a primary key
+- In the table below, **StudentID** depends on **CourseID** and **CourseID** depends on **Course** which is a non key field and has a transitive dependency. ***This does not meet the 3NF requirements.***
 
+    ![3NF](assets/images/3nf1.png)
 
+    - To satisfy **3NF**, break down into 2 tables
+
+    ![3NF](assets/images/3nf2.png)
 
 ##  Database Design Process
 
