@@ -1,30 +1,7 @@
 
 # Installing MySQL Database Server & MySQL Workbench
 # Connecting to MySQL server
-# Working with Databases
-### CREATE DATABASE: To create a database
-- **CREATE DATABASE** statement is used to create a database.
-- To create a database, you need to have the CREATE privilege for the database
-- If the database already exists, you will get an error message when not specifying  **IF NOT EXISTS** clause
-- Use meaningful and descriptive name for databases.The best practice is to use lowercase letters for your database names.
 
-#### Syntax
-```sql
-CREATE DATABASE Database_Name;
-```
-###### Example 1: To create a database named mydb1
-```sql
-CREATE DATABASE mydb1;
-```
-### USE DATABASE_NAME: To set the Working/Default Database: 
-- In order to work with the database, you must always specify the database to work with. 
-- Creating a database does not make it a current database. 
-
-### SHOW DATABASES;
-
-### drop DATABASES;
-
-### MySQL select database;
 
 ### SHOW tables; 
 
