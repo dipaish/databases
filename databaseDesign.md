@@ -89,7 +89,7 @@ You may use any of the following options:
 
 > Note: We did not specificy primary or foreign key. Once we learn them, we will start to use them.
 
-### PRIMARY KEY
+### PRIMARY KEY (PK)
 
 - The relational data model can not contain duplicate values. The duplicate values create ambiguities in retrieval, therefore  **primary key (PK)** is used to uniquely identify each record in a database table. 
 
@@ -119,7 +119,19 @@ You may use any of the following options:
     - Combining these two attributes will form a **composite primary key**
 - To avoid the **composite key**, you may create a new attribute enrollmentID as an integer & make it autoincrement. However, this will create an extra (unnecessary column), therefore a more effective choice is a **composite key.**
 
-### FOREIGN KEY
+### FOREIGN KEY (FK)
+
+
+- It is the primary key field of one table, that is stored in another table for the purpose of creating a link (join) between the tables.
+- Typically, a **foreign key** in one table points to the primary key in another table.
+
+![Foreign Key](assets/images/fk.png)
+
+- In the above table,the **StudentId** attribute is used to avoid duplicates because there can be two students with same first and last name.
+- To access name or student’s detail info, you have to access **StudentInfo** table
+- StudentId is the **primary key** of the **StudentInfo** table
+- In the grade table, **StudentId** is a **foreign key**.
+- In order to combine information from two tables, there muse be primary/foreign key pair.
 
 ### ENTITY RELATIONSHIP DIAGRAM
 - It is a top-down technique for visualizing and understanding the entities and the relationships between them. 
@@ -162,8 +174,6 @@ You may use any of the following options:
 - In the **relational model**, it means that multiple rows in a table are linked with multiple rows in another table and vice versa.
 ![many-to-many relationship](assets/images/mtm.png)    
 
-
-
 #### How to handle Many-to-many relationship in database design?
 - Lets think about the **student** and **course** tables, ***a student can enroll in many courses and a course has many students***. 
      - The relationship in this case is many to many relationship ***which is not an ideal situation in database design as it becomes difficult to manage many to many relationship using those two tables***. 
@@ -174,6 +184,54 @@ You may use any of the following options:
 
 ![many-to-many relationship](assets/images/new.png)
 ---
+## Normalization 
+- Normalization is the process of organizing data (attributes of the database) to 
+reduce the **redundancy of data** in the table and to improve the **integrity of data**. It also helps to reduce data duplication. The goal is check if the database is optimal and structurally correct. 
+- ***What is data redundancy in database?***
+    - Having same data in multiple locations.
+    - It increases the size of the database as same data is repeated. 
+    - The duplicate data results inconsistency problems during inserting, updating and deleting operations. 
+> Note: if the table is not normalized, there will be problems when updating, inserting and deleting data. 
+
+***You can start to check your tables based on the following normalizatoin rules (Normal Forms)***
+### First Normal Form (1NF)
+- It is the first stage of the normalization process. 
+- A table is in **1NF**  if 
+    - each record is unique
+    - Data in each column is **atomic**. ***Data is atomic when a column contains a single value not a lits of values and the value can not be broken down further.***
+    - No repeating groups of attributes for records: 
+        - A repeating group of attributes is a set of attributes that appear more than once within the record structure.
+        - Sometimes a single attribute will repeat, and this must be dealt with
+        - When you find a repeating group of attributes, it must be moved to a new table.
+
+***Example 1: student_info***
+The table student_info does not meet the requirements of 1NF because 
+- The `Name` column can be sub divided into two different fields first name and last name
+- The `Courses` column contains multiple values. 
+
+![1NF](assets/images/1nf.png)
+
+***Lets do the required changes so that student_info table is in 1NF***
+- Break full name into two columns fname & lname. 
+- Remove course column, we will need a separte table for course enrollment.
+- **The table below meets the 1NF requirements**
+
+    ![1NF](assets/images/1nfc1.png)
+
+### Second Normal Form (2NF)
+- It is the second stage of the normalization process.
+- The first requirements is that it meets all conditions for **1NF**
+- Every non-key column is fully dependent on the primary key. There should not be any partial dependencies.
+- If the primary key is made up of with the combination of columns (composite key), every non-key column shall depend on the composite key. 
+
+![1NF](assets/images/2nf.png)
+
+### Third Normal Form (3NF)
+- It is the third stage of the normalization process.
+- The first requirements is that it meets all conditions for **2NF**
+- 
+
+
 
 ##  Database Design Process
 
@@ -201,6 +259,8 @@ You may use any of the following options:
     - Define what kind of relationship exist between tables. 
 
 **End result: ER Diagram / Database Model**
+
+**Step 4: Normalize **
 
 ---
 
