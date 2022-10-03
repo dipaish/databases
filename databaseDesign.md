@@ -46,6 +46,7 @@
 - It is the most common type of `DBMS`
 
 **Example of an entity/table**
+
 ![relational data model](assets/images/relationalModel.png)
 
 ## Database Design: 
@@ -98,29 +99,34 @@ You may use any of the following options:
 ***Before creating an actual database, you produce three different types of data models:***
 
 #### 1. ***Conceptual Data Model***
-     - It is a highl level model.
-    - Think about the data requirements: what data your system contains? Take into account your stakeholders: application users & scope of your application 
-    - You are basically explaining the concept based on your data requirements & the relationship between the objects
-    -  The end result of the conceputal data model will be names such as `student`, `course`, `teacher`
-    - The relationship between the objects are simply shown by drawing a line between the objects.
-     - This model is done for wider audience that is it should be easy to understand for anyone looking the diagram. 
-        - **Hint: Represent data as a normal user will see it in the real world.** 
-        ##### Example of a Conceptual Data Model: A teacher will teach a course(s) and student can participate in a course(s).
-    ![Example of a Conceptual Data Model](assets/images/cmodel.png)
+- It is a highl level model.
+- Think about the data requirements: what data your system contains? Take into account your stakeholders: application users & scope of your application 
+- You are basically explaining the concept based on your data requirements & the relationship between the objects
+-  The end result of the conceputal data model will be names such as `student`, `course`, `teacher`
+- The relationship between the objects are simply shown by drawing a line between the objects.
+- This model is done for wider audience that is it should be easy to understand for anyone looking the diagram. 
+
+    **Hint: Represent data as a normal user will see it in the real world.** 
+
+##### Example of a Conceptual Data Model: A teacher will teach a course(s) and student can participate in a course(s).
+
+![Example of a Conceptual Data Model](assets/images/cmodel.png)
 
 #### 2. ***Logical Data Model***
-    - The logical data model defines the structure of the data.
-    - Each object is defined in details that is you inform about each of your object. In the above case, you need to define information for `student`, `course` & `teacher`
-    - You need to explain data types such as number or string for each of your data attribute.
-    - It also shows the relationships between objects. 
-    ##### Example of a Logic Data Model: Each object is defined in details. 
-     ![Example of a Logical Data Model](assets/images/logicModel.png)
+- The logical data model defines the structure of the data.
+- Each object is defined in details that is you inform about each of your object. In the above case, you need to define information for `student`, `course` & `teacher`
+- You need to explain data types such as number or string for each of your data attribute.
+- It also shows the relationships between objects. 
+   
+##### Example of a Logic Data Model: Each object is defined in details. 
+
+![Example of a Logical Data Model](assets/images/logicModel.png)
 
 #### 3. ***Physical Data Model***
-    - It is describing a database specific implementation of the data model. 
-    - It is used to creata a database and required tables.
-    - It includes the name of the table & column names with [Data Types](https://dev.mysql.com/doc/refman/8.0/en/data-types.html). 
-    - Primary keys, foreign keys, views etc are also defined. 
+- It is describing a database specific implementation of the data model. 
+- It is used to creata a database and required tables.
+- It includes the name of the table & column names with [Data Types](https://dev.mysql.com/doc/refman/8.0/en/data-types.html). 
+- ***Primary keys, foreign keys, views*** etc are also defined. 
     
     ##### Example of a Physical Data Model: Each object is defined in details. 
      ![Example of a Physical Data Model](assets/images/pmodel.png)
@@ -184,8 +190,8 @@ You may use any of the following options:
     - One-to-one relationship (It is not very common type of relationship)
     - **One-to-many relationship** (The most common type of relationship )
     - Many-to-many relationship (It is not ideal in the database design)
-### Types of relationships
-#### One-to-one relationship
+## Types of relationships
+### One-to-one relationship
 
 - As the name suggests, **One-to-one** refers to the association between two entities(tables) A & B in which one element from A is linked to one element of B. 
 - In the **relational model**, it means that one row in a table is linked with only one row in another table and vice versa.
@@ -196,7 +202,7 @@ You may use any of the following options:
     - Each course has only 1 capital city.
 
 
-#### One-to-many relationship
+### One-to-many relationship
 - **One-to-many** refers to the association between two entities(tables) A & B in which one element from A is linked to multiple elements of B.
 - In the **relational model**, it means that one row in a table is linked with many rows in another table and vice versa.
 - It is the most commmon type of relationship. 
@@ -207,7 +213,7 @@ You may use any of the following options:
     - A teacher can teach many courses. 
 
 
-#### Many-to-many relationship
+### Many-to-many relationship
 
 - **Many-to-many** refers to the association between  entities(tables)  in which many elements from one entity are linked to many elements in another entity.
 - In the **relational model**, it means that multiple rows in a table are linked with multiple rows in another table and vice versa.
@@ -255,7 +261,7 @@ The table student_info does not meet the requirements of 1NF because
 - Remove course column, we will need a separte table for course enrollment.
 - **The table below meets the 1NF requirements**
 
-    ![1NF](assets/images/1nfc1.png)
+![1NF](assets/images/1nfc1.png)
 
 ### Second Normal Form (2NF)
 - It is the second stage of the normalization process.
@@ -263,7 +269,7 @@ The table student_info does not meet the requirements of 1NF because
 - Every non-key column is fully dependent on the primary key. There should not be any partial dependencies.
 - If the primary key is made up of with the combination of columns (composite key), every non-key column shall depend on the composite key. 
 
-![1NF](assets/images/2nf.png)
+![2NF](assets/images/2nf.png)
 
 ### Third Normal Form (3NF)
 - It is the third stage of the normalization process.
@@ -271,11 +277,11 @@ The table student_info does not meet the requirements of 1NF because
 - The non key columns are independent of each others that is the non key columns are dependent only on the primary key. ***There must not be any transitive dependency that is non-key dependencies.*** You don’t have any data that depends on fields that are not designated a primary key or part of a primary key
 - In the table below, **StudentID** depends on **CourseID** and **CourseID** depends on **Course** which is a non key field and has a transitive dependency. ***This does not meet the 3NF requirements.***
 
-    ![3NF](assets/images/3nf1.png)
+![3NF](assets/images/3nf1.png)
 
-    - To satisfy **3NF**, break down into 2 tables
+- To satisfy **3NF**, break down into 2 tables
 
-    ![3NF](assets/images/3nf2.png)
+![3NF](assets/images/3nf2.png)
 
 ## Anomalies
 - An anomaly is something that deviates from what is standard, normal or expected
