@@ -128,8 +128,9 @@ You may use any of the following options:
 - It includes the name of the table & column names with [Data Types](https://dev.mysql.com/doc/refman/8.0/en/data-types.html). 
 - ***Primary keys, foreign keys, views*** etc are also defined. 
     
-    ##### Example of a Physical Data Model: Each object is defined in details. 
-     ![Example of a Physical Data Model](assets/images/pmodel.png)
+##### Example of a Physical Data Model: Each object is defined in details. 
+
+![Example of a Physical Data Model](assets/images/pmodel.png)
 
 > Note: We did not specificy primary or foreign key. Once we learn them, we will start to use them.
 
@@ -165,7 +166,6 @@ You may use any of the following options:
 - To avoid the **composite key**, you may create a new attribute enrollmentID as an integer & make it autoincrement. However, this will create an extra (unnecessary column), therefore a more effective choice is a **composite key.**
 
 ### FOREIGN KEY (FK)
-
 
 - It is the primary key field of one table, that is stored in another table for the purpose of creating a link (join) between the tables.
 - Typically, a **foreign key** in one table points to the primary key in another table.
