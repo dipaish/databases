@@ -185,11 +185,11 @@ You may use any of the following options:
     - logical structure of the entities (attributes) and 
     - relationships between the entities
 - Each **entity** in an ER diagram is represented by a rectangle. 
-- **Relationship** is an association between two o rmore entities.
+- **Relationship** is an association between two or more entities.
  `Example: the relation between the course and student table is that a student can enroll to one or many coourses.` ***It is shown by a line and can be one of the three types***
-    - One-to-one relationship (It is not very common type of relationship)
+    - **One-to-one relationship** (It is not very common type of relationship)
     - **One-to-many relationship** (The most common type of relationship )
-    - Many-to-many relationship (It is not ideal in the database design)
+    - **Many-to-many relationship** (It is not ideal in the database design)
 ## Types of relationships
 ### One-to-one relationship
 
@@ -219,7 +219,7 @@ You may use any of the following options:
 - In the **relational model**, it means that multiple rows in a table are linked with multiple rows in another table and vice versa.
 ![many-to-many relationship](assets/images/mtm.png)    
 
-### How to handle Many-to-many relationship in database design?
+## How to handle Many-to-many relationship in database design?
 - Lets think about the **student** and **course** tables, ***a student can enroll in many courses and a course has many students***. 
      - The relationship in this case is many to many relationship ***which is not an ideal situation in database design as it becomes difficult to manage many to many relationship using those two tables***. 
      - To store data effectively, we can think of a adjoining table that relates both of those two tables by establishing one to many relationship. 
@@ -286,11 +286,11 @@ The table student_info does not meet the requirements of 1NF because
 ## Anomalies
 - An anomaly is something that deviates from what is standard, normal or expected
 - Anomalies arise when data operations such as inserting, deleting or updating records result in unexpected errors
-    - Insertion Anomalies
+    - **Insertion Anomalies**
         - If a particular course is only part of an enrollment record, a course can not exist within it having an enrollment
-    - Deletion Anomalies
+    - **Deletion Anomalies**
         - Data is lost unintentionally (by deleting other data)
-    - Update Anomalies
+    - **Update Anomalies**
         - Data is held in multiple locations, when you make an update, it is made to only 1 version and thus an update anomaly has happened.
 
 > ***On normalizing your data to third form (3NF), anomalies are eliminated***
@@ -310,7 +310,7 @@ The table student_info does not meet the requirements of 1NF because
 - Each foreign key in a table(child table) must match to a primary key in the referenced table (parent table)
 - Inserting with a foreign key is only possible if the value exists in the partent table.
 
-## Example 1: Grading System 
+## Example 1: Simple Grading System 
 
 **A simple database design for course enrollment and grading system.**
 
