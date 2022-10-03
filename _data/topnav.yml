@@ -11,8 +11,10 @@ topnav_dropdowns:
   folders:
     - title: Working with Tables
       folderitems:
-        - title: Alter
-          url: /mydoc_introduction.html
+        - title: Create Table
+          url: /WorkingwithTables
+        - title: Insert into Table
+          url: /insertInto
         - title: Update
           url: /p1_landing_page.html
         - title: Delete
