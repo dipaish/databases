@@ -5,7 +5,7 @@
 - ***Always remember to select a database before executing any SQL statement***
 **Syntax**
 
-```ps
+```sql
 CREATE TABLE table_name
 (
 column_name1 data_type(size),
@@ -16,7 +16,7 @@ column_name3 data_type(size),
 ```
 ***Example 1: To create a table named teacher***
 
-```ps
+```sql
 DROP DATABASE mydb1;
 ```
 ### DESCRIBE [table_name];
