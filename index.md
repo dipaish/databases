@@ -84,7 +84,7 @@ PS D:\dataService> docker-compose up -d
 ![connect to the database server](assets/images/sqleditor.png)
 
 # Working with Databases
-### CREATE DATABASE: To create a database
+### CREATE DATABASE
 - **CREATE DATABASE** statement is used to create a database.
 - To create a database, you need to have the CREATE privilege for the database
 - If the database already exists, you will get an error message when not specifying  **IF NOT EXISTS** clause
@@ -98,12 +98,13 @@ CREATE DATABASE Database_Name;
 ```sql
 CREATE DATABASE mydb1;
 ```
-### USE DATABASE_NAME: To set the Working/Default Database: 
+### USE DATABASE_NAME 
+- To set the Working/Default Database: 
 - In order to work with the database, you must always specify the database to work with. 
 - Creating a database does not make it a current database. 
 
-### SHOW DATABASES;
+### SHOW DATABASES
 
-### drop DATABASES;
+### DROP DATABASE_NAME
 
-### MySQL select database;
+### SELECT DATABASE_NAME
