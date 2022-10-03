@@ -99,12 +99,43 @@ CREATE DATABASE Database_Name;
 CREATE DATABASE mydb1;
 ```
 ### USE DATABASE_NAME 
-- To set the Working/Default Database: 
-- In order to work with the database, you must always specify the database to work with. 
+- It is necessary to tell MySQL which database to work with. 
 - Creating a database does not make it a current database. 
+- After selecting the database, operations such as querying data, creating new tables will take effects on the current database.
 
+**Syntax**
+```sql
+USE Database_Name;
+```
+***Example 1: To set the working database to mydb1***
+```sql
+USE mydb1;
+```
 ### SHOW DATABASES
+- To display all databases on the database server 
+
+```sql
+SHOW DATABASES;
+```
 
 ### DROP DATABASE_NAME
+- DROP statement is used to delete a database. 
+- Deleting a database deletes all data and related objects permanently.
+
+**Syntax**
+
+```sql
+DROP DATABASE [IF EXISTS] database_name;
+
+```
+***Example 1: To delete the database mydb1***
+```sql
+DROP DATABASE mydb1;
+```
 
 ### SELECT DATABASE_NAME
+- To see which database is currently selected.
+
+```sql
+SELECT DATABASE();
+```
