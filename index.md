@@ -126,9 +126,9 @@ SHOW DATABASES;
 
 ```ps
 DROP DATABASE [IF EXISTS] database_name;
-
 ```
 ***Example 1: To delete the database mydb1***
+
 ```sql
 DROP DATABASE mydb1;
 ```
