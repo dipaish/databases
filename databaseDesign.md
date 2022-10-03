@@ -276,20 +276,37 @@ The table student_info does not meet the requirements of 1NF because
 
     ![3NF](assets/images/3nf2.png)
 
+### Anomalies
+- An anomaly is something that deviates from what is standard, normal or expected
+- Anomalies arise when data operations such as inserting, deleting or updating records result in unexpected errors
+    - Insertion Anomalies
+        - If a particular course is only part of an enrollment record, a course can not exist within it having an enrollment
+    - Deletion Anomalies
+        - Data is lost unintentionally (by deleting other data)
+    - Update Anomalies
+        - Data is held in multiple locations, when you make an update, it is made to only 1 version and thus an update anomaly has happened.
 
+> ***On normalizing your data to third form (3NF), anomalies are eliminated***
+
+### Intergrity Rules
+- Integrity rules are very important for a good database design. 
+- RDBMS enforce entigrity rules automat
+
+#### Entity integrity
+- All primary key entries are unique and not null. 
+- All entities must have some sort of unique idetification.
+- For a composite key which is made up of several columns, none of the column can contain Null.
+- All foreign key values are properly referencing primary key valuues.
+
+#### Referential Integrity
+- The referential integrity is specified between tables (relationship) to ensure the consistencey among tuples(records) of the tables. 
+- Each foreign key in a table(child table) must match to a primary key in the referenced table (parent table)
+- Inserting with a foreign key is only possible if the value exists in the partent table.
 
 ### Example 1: A simple Database for a library
 > Now let's put all pieces what we have learnt so far and create a database design for a library.
 - Library has several books and items to loan. 
 - Think of the entities: `book` 
-
-
-### Hello world
-- create tables with draw.io
-- understand relationship and establish relationship between tables
-- Decide primary and foreign keys
-- Specify datatypes
-
 
 ### References: 
 - https://en.wikipedia.org/wiki/Database Read on 27.09.2022
