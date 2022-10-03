@@ -1,43 +1,108 @@
+## What is MySQL?
+- The most popular Open Source database management system
+- Developed, distributed & supported by Oracle Corporation
+- MySQL Web site: http://www.mysql.com/
+- MySQL databases are relational
+- MySQL database server is fast, reliable, scalable & easy to use
+- MySQL server works in client/server or embedded systems
 
-# Introduction to Databases
-### What is a database? 
+**Main features of MySQL**
+- Internals & portability  (Written in C & C++, Works on many different platforms) 
+- Support for varieties of data types (Data types (signed/unsigned integers 1, 2, 3, 4, and 8 bytes long, FLOAT, DOUBLE, CHAR, VARCHAR, BINARY, VARBINARY, TEXT, BLOB, DATE, TIME, DATETIME, TIMESTAMP, YEAR, SET, ENUM, and OpenGIS spatial types)
+- Statements & Functions (Full operator and function support in the  SELECT list and WHERE clause of queries)
+- Security (A privilege and password system that is very flexible and secure, and that enables host-based verification.)
+- Scalability & limits (Support for large databases) 
+- Connectivity (Clients can connect to MySQL Server using several protocols : TCP/IP sockets on any platform)
+- Localization (support for several characters set (scandavian characters: Ä Ö Å ), Error messages to clients in many languages)
+- Clients & Tools (Command line programs such as mysqldump & mysqladmin, GUI programs such as MySQL Workbench)
 
-- An ***organized  collection*** of related data (structured information) 
-    -  Stored in **logical and structured** manner
-    - Typically stored electronically in a computer system
-- Databases are everywhere 
-    - points related to course assignments are recorded in the database
-    - if you do enough work on the course to achieve the learning objectives related to the course, your grade will be recorded in the database
-    - Application utilizes one or more databases
-- Databases can be **local** (located on the same machine)
-- Databases can be **external** (located on a separate server)
-- Information is retrieved from the database and presented to the end-user via an application  
-![database storing & retrieving information](assets/images/db.png)
-### What is Database Management System (DBMS) ?
-- A database management system is an application through which a user can create and maintain databases.
-    > Example: **MySQL**, Microsoft Access, Microsoft SQL Server, FileMaker Pro, Oracle Database, and dBASE
+### How to install MySQL 8.0 ?
 
-- DBMS provides multiple functions for managing databases & its data. These functions can be classified as below: 
-    - **Data definition**: Organization of the data (creating, modifying & removing)
-     - **Update** – Insertion, modification, and deletion of the actual data.
-     - **Retrieval** – Getting data for presentation or further processing by an application.
-     - **Administration** – Managing database users, databases, enforcing data security, monitoring performance, maintaining data integrity, database backups
-- **MySQL is a popular, open-source DBMS**
+**Quick Installation Guide**
+- MySQL: available for a number of OS & platforms
+- Types of releases:
+    - ***Development releases***
+        - Newest features
+        - Not recommended for production use
+    - ***General Availability (GA) releases***
+        - Also called production or stable releases
+        - Meant for production use
+        - **Use the most recent GA release (recommended)**
 
-### Benefits of a Database System
-- Centralized data management.
-- Data duplication is reduced or managed.
-- Data inconsistency can be avoided.
-- Multiple users can access data, even at the same time.
-- Standardization is easier.
-- Data access rights can be secured.
-- Data is more reliable and accurate.
-- Different operating needs can be considered when building the system.
-- Easier deployment of new applications.
-- Provides mechanisms for data backup and recovery.
+***Read More: https://dev.mysql.com/doc/refman/8.0/en/installing.html ***
+
+#### Installing MySQL 8.0 with Docker in Windows
+
+> Note: Please ensure that you have Docker Desktop installed in your device and the docker engine is running. 
+
+Step 1: Start Docker Desktop & ensure that the Docker Engine is running. 
+
+Step 2: Create a folder anywhere in your PC. (Please do not delete it). 
+
+Step 3: Open the folder with Visual Studio Code. Provided that you have enabled 
+docker related extensions in your VSC. 
+
+Step 4: Use wget to get the docker-compose file. https://raw.githubusercontent.com/dipaish/docker/master/docker-compose.yml 
+
+```ps
+PS D:\dataService> Invoke-WebRequest -Uri https://raw.githubusercontent.com/dipaish/docker/master/docker-compose.yml -OutFile docker-compose.yml
+```
+Step 5: Run the docker compose file to set up the MySQL database server. 
+```ps
+PS D:\dataService> docker-compose up -d
+```
+**Some docker commands:**
+- To start a docker container in the background `docker-compose up –d`
+- To list all active containers 
+`Docker ps`
+- To remove all docker containers in the repository `Docker-compose down`
 
 
-### References: 
-- https://en.wikipedia.org/wiki/Database Read on 27.09.2022
-- https://en.wikipedia.org/wiki/Data_modeling Read on 27.09.2022
+#### Installing MySQL Workbench 
+Step 1: Get to this link (https://dev.mysql.com/downloads/workbench/) and download MySQL Workbench **Windows (x86, 64-bit), MSI Installer** & install MySQL Workbench. 
 
+![download MySQL Workbench](assets/images/wb1.png)
+
+#### How to connect to the Database server in Docker container using MySQL Workbench?
+
+***Now that we have the necessary tools, we will use MySQL Workbench to connect to the database service running in a docker container.***
+
+- Step1: Make sure that your Docker Engine is running & the docker service is up and running. You may run the service by typing the following command in powershell. 
+
+```ps
+PS D:\dataService> docker-compose up -d
+```
+- Step 2: Start MySQL Workbench & add new MySQL Connection
+![create new mysql connection](assets/images/dc11.png)
+
+- Step 3: Double Click on the newly created connection and type in your password.  
+![connect to the database server](assets/images/dc33.png)
+
+### Writing your first SQL statement
+- ***Create a simple database named fname_lname***
+![connect to the database server](assets/images/sqleditor.png)
+
+# Working with Databases
+### CREATE DATABASE: To create a database
+- **CREATE DATABASE** statement is used to create a database.
+- To create a database, you need to have the CREATE privilege for the database
+- If the database already exists, you will get an error message when not specifying  **IF NOT EXISTS** clause
+- Use meaningful and descriptive name for databases.The best practice is to use lowercase letters for your database names.
+
+#### Syntax
+```sql
+CREATE DATABASE Database_Name;
+```
+###### Example 1: To create a database named mydb1
+```sql
+CREATE DATABASE mydb1;
+```
+### USE DATABASE_NAME: To set the Working/Default Database: 
+- In order to work with the database, you must always specify the database to work with. 
+- Creating a database does not make it a current database. 
+
+### SHOW DATABASES;
+
+### drop DATABASES;
+
+### MySQL select database;
