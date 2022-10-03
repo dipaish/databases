@@ -1,4 +1,4 @@
-## Introduction to Database
+## Introduction to Database & Database Design - CH2
 ### What is a database? 
 
 - An ***organized  collection*** of related data (structured information) 
