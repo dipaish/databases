@@ -3,6 +3,7 @@
 - `CREATE TABLE` statement is used to create a table within a database. 
 
 - ***Always remember to select a database before executing any SQL statement***
+
 **Syntax**
 
 ```sql
@@ -17,7 +18,16 @@ column_name3 data_type(size),
 ***Example 1: To create a table named teacher***
 
 ```sql
-DROP DATABASE mydb1;
+# Creating a table named author
+use mydb1;
+CREATE TABLE author 
+(
+aut_id INT AUTO_INCREMENT PRIMARY KEY, 
+aut_fname VARCHAR(50) NOT NULL,
+country VARCHAR(25) NOT NULL,
+home_city VARCHAR(25),
+created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
 ```
 ### DESCRIBE [table_name];
 ### DROP TABLE
