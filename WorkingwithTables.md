@@ -138,11 +138,6 @@ insert into students_age2(fname,lname,age,city,country) values
 select * from students_age2;
 ```
 
-
-
-
-
-
 ### DESCRIBE [table_name]
 - Describes  the columns and default values for a table. 
 
@@ -151,8 +146,19 @@ select * from students_age2;
 DESCRIBE students;
 ```
 
-
 ### DROP TABLE
+- The `DROP TABLE` statement is used to delete an existing table in a database.
+***Example: To drop the table students***
+```sql
+DROP TABLE students;
+```
+
+### TRUNCATE TABLE
+- The `TRUNCATE TABLE` statement is used to delete only the data of a table but not the table.
+***Example: To truncate the table students_age2***
+```sql
+TRUNCATE TABLE students_age2;
+```
 ### ALTER TABLE
 ### INSERT INTO  <table_name> values(value1,value2,....);
 ### SELECT: To retrieve rows from one or more tables
