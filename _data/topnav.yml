@@ -23,4 +23,10 @@ topnav_dropdowns:
           url: /update
         - title: Delete
           url: /delete
-
+topnav:
+- title: Topnav
+  items:
+    - title: Joins
+      url: /databaseDesign
+     - title: Functions
+      url: /databaseDesign
