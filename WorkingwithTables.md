@@ -172,8 +172,9 @@ drop table newauthor, copy_book_rec;
 TRUNCATE TABLE students_age2;
 ```
 
-### ALTER TABLE
+
 ### INSERT INTO  <table_name> values(value1,value2,....);
+### ALTER TABLE
 ### SELECT: To retrieve rows from one or more tables
 ### MySQL Constraint (Primary Key, Unique, Foreign Key)
 ### CREATE TABLE with NULL CONSTRAINT
