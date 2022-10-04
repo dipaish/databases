@@ -22,7 +22,7 @@ column_name3 data_type(size),
 use mydb1;
 CREATE TABLE author 
 (
-aut_id INT AUTO_INCREMENT PRIMARY KEY, 
+aut_id INT, 
 aut_fname VARCHAR(50) NOT NULL,
 country VARCHAR(25) NOT NULL,
 home_city VARCHAR(25),
@@ -33,7 +33,7 @@ created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 
 ```sql
 CREATE TABLE students( 
-student_id INT AUTO_INCREMENT PRIMARY KEY, 
+student_id INT, 
 fname varchar(100),
 lname varchar(100),
 country varchar(100),
@@ -57,6 +57,81 @@ CREATE TABLE IF NOT EXISTS dup_students1
 AS SELECT * FROM  students;
 ```
 
+### CREATE TABLE with PRIMARY KEY CONSTRAINT
+
+- Primary key **uniquely identifies** each record in a database table
+- **Rules for Primary Key**
+    - Must contain unique values and Not NULL
+    - Most tables have a primary key
+    - A table has only one primary key
+    - Primary key column’s type should be an integer type (INT or BIGINT)
+    - Primary key column often has **AUTO_INCREMENT** attribute that generates a unique sequence for the key automatically. 
+    - The primary key sometimes may consist of multiple columns, the combination of values in these columns must be unique. (COMPOSITE Key)
+- ***You can create a primary key in two ways***
+    1. **Create table** 
+    2. **Alter table**
+
+***1. Defining Primary Key at the time of creating a table***
+
+```sql
+CREATE TABLE author1 
+(
+aut_id INT AUTO_INCREMENT PRIMARY KEY, 
+aut_fname VARCHAR(50) NOT NULL,
+country VARCHAR(25) NOT NULL,
+home_city VARCHAR(25),
+created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+```
+>***Note: You can also specify the PRIMARY Key at the end of the CREATE TABLE statement as below:***
+
+```sql
+CREATE TABLE author11 
+(
+aut_id INT AUTO_INCREMENT, 
+aut_fname VARCHAR(50) NOT NULL,
+country VARCHAR(25) NOT NULL,
+home_city VARCHAR(25),
+created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+PRIMARY KEY(aut_id)
+);
+```
+***2. Defining Primary Key with Alter Table statement***
+- When the table is already created, you can use `ALTER TABLE` statement to create a **PRIMARY KEY**.
+
+```sql
+# note the author table was created eariler, lets add a primary key to the table
+ALTER TABLE author
+ADD PRIMARY KEY (aut_id);
+```
+### DELETE PRIMARY KEY
+- To delete a **PRIMARY KEY** from a table, use `DROP PRIMARY KEY` with `ALTER TABLE` statement.
+
+```sql
+ALTER TABLE author
+DROP PRIMARY KEY;
+```
+
+### CREATE TABLE with COMPOSITE KEY
+- Composite key is simply PRIMARY KEY on multiple columns 
+- Combination of two or more columns for uniquely identifying each row in the table
+- There can be situation where multiple attributes are need to uniquely identify an entity. 
+- A primary key made up of more than one attribute is called composite primary key. 
+
+```sql
+CREATE TABLE table1(
+COL1 int,  
+COL2 varchar(20),  
+COL3 varchar(30),  
+PRIMARY KEY (COL1, COL2)
+);  
+```
+### CREATE TABLE with Foreign key
+- MySQL foreign keys are used to link a column(s) between tables.
+- Typically, a foreign key in one table points to the primary key in another table.
+
+
+
 ### CREATE TEMPORARY TABLE
 
 - `TEMPORARY` keyword can be used to create a temporary table. 
@@ -66,35 +141,6 @@ AS SELECT * FROM  students;
 CREATE TEMPORARY TABLE temp1 SELECT * FROM students_age2;
 ```
 
-### DESCRIBE [table_name]
-- Describes  the columns and default values for a table. 
-
-***Example: To describe the table students***
-
-```sql
-DESCRIBE students;
-```
-
-### DROP TABLE
-- The `DROP TABLE` statement is used to delete one or more tables from an existing database. 
-- It removes all the data and table definition from the database.
-
-
-***Example: To drop the table students***
-```sql
-DROP TABLE students;
-# to drop multiple tables, use comman and type table names that you want to drop 
-drop table newauthor, copy_book_rec;
-```
-
-### TRUNCATE TABLE
-- The `TRUNCATE TABLE` statement is used to delete only the data of a table but not the table.
-
-***Example: To truncate the table students_age2***
-
-```sql
-TRUNCATE TABLE students_age2;
-```
 ### CREATE TABLE with NOT NULL CONSTRAINT
 
 - The column can hold null values by default therefore to enforce a value for a column, you can use **NOT NULL**.
@@ -181,12 +227,43 @@ insert into students_age2(fname,lname,age,city,country) values
 #to fetch all records from the table
 select * from students_age2;
 ```
+### CREATE TABLE  with UNIQUE CONSTRAINT 
+
+- Creates a constraint for a column whose values must be unique
+- Unlike PRIMARY, it allows NULL values in the UNIQUE index
+- A table can have multiple UNIQUE indexes.
+- To ensure values are unique for columns like email, phone number etc
+
+
+### DESCRIBE [table_name]
+- Describes  the columns and default values for a table. 
+
+***Example: To describe the table students***
+
+```sql
+DESCRIBE students;
+```
+
+### DROP TABLE
+- The `DROP TABLE` statement is used to delete one or more tables from an existing database. 
+- It removes all the data and table definition from the database.
+
+
+***Example: To drop the table students***
+```sql
+DROP TABLE students;
+# to drop multiple tables, use comman and type table names that you want to drop 
+drop table newauthor, copy_book_rec;
+```
+
+### TRUNCATE TABLE
+- The `TRUNCATE TABLE` statement is used to delete only the data of a table but not the table.
+
+***Example: To truncate the table students_age2***
+
+```sql
+TRUNCATE TABLE students_age2;
+```
 
 ### ALTER TABLE
 ### SELECT: To retrieve rows from one or more tables
-### MySQL Constraint (Primary Key, Unique, Foreign Key)
-### CREATE TABLE with AUTO INCREMENT
-### CREATE TABLE with PRIMARY KEY CONSTRAINT on single column
-### CREATE TABLE PRIMARY KEY on multiple columns
-### CREATE table with FOREIGN KEY CONSTRAINT
-### CREATE TABLE  with UNIQUE CONSTRAINT 
