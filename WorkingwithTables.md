@@ -182,13 +182,13 @@ TRUNCATE TABLE students_age2;
 ```
 
 
-### INSERT INTO  <table_name> values(value1,value2,....);
+
 ### ALTER TABLE
 ### SELECT: To retrieve rows from one or more tables
 ### MySQL Constraint (Primary Key, Unique, Foreign Key)
 ### CREATE TABLE with NULL CONSTRAINT
 ### CREATE TABLE  with CHECK CONSTRAINT
-### CREATE TABLE  with UUNIQUE CONSTRAINT 
+### CREATE TABLE  with UNIQUE CONSTRAINT 
 ### CREATE TABLE with DEFAULT CONSTRAINT
 ### CREATE TABLE with AUTO INCREMENT
 ### CREATE TABLE with PRIMARY KEY CONSTRAINT on single column
