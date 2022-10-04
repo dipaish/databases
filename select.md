@@ -1,0 +1,1 @@
+### SELECT: To retrieve rows from one or more tables

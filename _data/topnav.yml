@@ -15,11 +15,12 @@ topnav_dropdowns:
           url: /WorkingwithTables
         - title: Insert into Table
           url: /insertInto
+        - title: SELECT Records
+          url: /select
         - title: Alter Table
           url: /alterTable
         - title: Update
-          url: /p1_landing_page.html
+          url: /update
         - title: Delete
-          url: /p2_landing_page.html
-
+          url: /delete
 
