@@ -165,10 +165,13 @@ drop table newauthor, copy_book_rec;
 
 ### TRUNCATE TABLE
 - The `TRUNCATE TABLE` statement is used to delete only the data of a table but not the table.
+
 ***Example: To truncate the table students_age2***
+
 ```sql
 TRUNCATE TABLE students_age2;
 ```
+
 ### ALTER TABLE
 ### INSERT INTO  <table_name> values(value1,value2,....);
 ### SELECT: To retrieve rows from one or more tables
