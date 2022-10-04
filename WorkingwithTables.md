@@ -88,8 +88,9 @@ insert into students_age(age) values
 - The column can hold null values by default therefore to enforce a value for a column, you can use **NOT NULL**.
 - **NOT NULL**. means a value must be provided when inserting a new record or updating the existing one. 
 - Lets create a new table students_age1 table NOT NULL columns. 
+
 ```sql
-# to insert a new record, you must  include values for fname and lname
+#to insert a new record, you must  include values for fname and lname
 CREATE TABLE students_age1( 
 student_id INT AUTO_INCREMENT PRIMARY KEY, 
 fname varchar(100) NOT NULL,
@@ -105,11 +106,37 @@ insert into students_age1(fname,lname,age) values
 
 #to fetch all records from the table
 select * from students_age1;
-
 ```
+
 ***Example 7: Using Default constraint.***
+
 - The **default** constraint is used to set a default value for a column.
 - When you are adding a new record and you don't specify the value, the default value will be added.
+
+```sql
+# creating a table with defualt country as Finland & defaul city as Helsinki
+CREATE TABLE students_age2( 
+student_id INT AUTO_INCREMENT PRIMARY KEY, 
+fname varchar(100) NOT NULL,
+lname varchar(100) NOT NULL,
+city varchar(100) DEFAULT 'Helsinki',
+country varchar(100) DEFAULT 'Finland',
+age int CHECK (age>=18)
+);
+
+#lets insert some values 
+insert into students_age2(fname,lname,age) values 
+('Pekka','Smith',21),
+('Juha','Honkanen',18);
+
+#to fetch all records from the table
+select * from students_age2;
+```
+
+
+
+
+
 
 ### DESCRIBE [table_name]
 - Describes  the columns and default values for a table. 
