@@ -129,8 +129,50 @@ PRIMARY KEY (COL1, COL2)
 ### CREATE TABLE with Foreign key
 - MySQL foreign keys are used to link a column(s) between tables.
 - Typically, a foreign key in one table points to the primary key in another table.
+- You can define Foreign Key(s) at the time of **creating a table** with `CREATE TABLE` statement or with `ALTER TABLE` statement **when the table is already created.**
 
+```sql
+# Foreign key Create table statement
+CREATE TABLE courses(
+course_id int NOT NULL AUTO_INCREMENT,  
+cname varchar(200) NOT NULL,
+ects int NOT NULL,  
+teacher_id int NOT NULL,  
+PRIMARY KEY (course_id), 
+/* specify what column is foreign key such as teacher_id in courses table is a foreign key that points to teacher_id in teachers table which is a primary key. 
 
+- to name a foreign key or when you have to define foreign key on multiple columns:
+CONSTRAINT FK_teacher_id FOREIGN KEY (teacher_id)
+REFERENCES teachers(teacher_id)
+
+*/
+FOREIGN KEY (teacher_id) REFERENCES teachers(teacher_id)
+);  
+
+CREATE TABLE teachers( 
+teacher_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+fname varchar(100),
+lname varchar(100),
+country varchar(100)
+);
+
+# Dropping a foreign key: In MySQL Workbench, you can find the foreign key name by clicking on Foreign Keys 
+ALTER TABLE courses
+DROP FOREIGN KEY foreignKeyName;
+
+# creating foreign key when the table is already created
+ALTER TABLE courses
+ADD FOREIGN KEY (teacher_id) REFERENCES teachers(teacher_id);   
+
+# creating foreign key with the keyname when the table is already created
+ALTER TABLE courses
+ADD CONSTRAINT FK_teacher_id
+FOREIGN KEY (teacher_id) REFERENCES teachers(teacher_id);
+```
+> Note, when you specify foreign keys, using tools such as phpmyadmin will generate ER diagram. 
+- Get to [localhost:81](http://localhost:81)
+- Type your username and password (root & password) to login to phpmyadmin
+![phpmyadmin ER diagram](/assets/images/des.png)
 
 ### CREATE TEMPORARY TABLE
 
@@ -234,6 +276,15 @@ select * from students_age2;
 - A table can have multiple UNIQUE indexes.
 - To ensure values are unique for columns like email, phone number etc
 
+```sql
+CREATE TABLE teachers1( 
+teacher_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+fname varchar(100),
+lname varchar(100),
+country varchar(100),
+email varchar(100) NOT NULL UNIQUE
+);
+```
 
 ### DESCRIBE [table_name]
 - Describes  the columns and default values for a table. 
@@ -265,5 +316,5 @@ drop table newauthor, copy_book_rec;
 TRUNCATE TABLE students_age2;
 ```
 
-### ALTER TABLE
+
 ### SELECT: To retrieve rows from one or more tables
