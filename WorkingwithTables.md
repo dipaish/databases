@@ -115,6 +115,7 @@ select * from students_age1;
 
 ```sql
 # creating a table with defualt country as Finland & defaul city as Helsinki
+# creating a table with defualt country as Finland & defaul city as Helsinki
 CREATE TABLE students_age2( 
 student_id INT AUTO_INCREMENT PRIMARY KEY, 
 fname varchar(100) NOT NULL,
@@ -128,6 +129,10 @@ age int CHECK (age>=18)
 insert into students_age2(fname,lname,age) values 
 ('Pekka','Smith',21),
 ('Juha','Honkanen',18);
+# if you sepcify the column name, you must use DEFAULT keyword TO insert the default value
+insert into students_age2(fname,lname,age,city,country) values 
+('Pekka','Smith',21,'Oulu','Finland'),
+('Juha','Honkanen',18, DEFAULT, DEFAULT);
 
 #to fetch all records from the table
 select * from students_age2;
