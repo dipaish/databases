@@ -5,10 +5,10 @@ topnav:
   items:
     - title: Database Design
       url: /databaseDesign
-    - title: Joins
-      url: /joins
-    - title: Functions
-      url: /functions
+   ## - title: Joins
+   ##   url: /joins
+   ## - title: Functions
+   ##   url: /functions
 #Topnav dropdowns
 topnav_dropdowns:
 - title: Topnav dropdowns
