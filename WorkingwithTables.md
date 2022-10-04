@@ -41,12 +41,17 @@ country varchar(100),
 ```
 
 ***Example 3: To create the structure of a table dup_students similar to countries.***
+- To copy the table structure or to create a table that is identical to another by using ***Like***
+
+
 ```sql
 CREATE TABLE IF NOT EXISTS dup_students
 LIKE students;
 ```
 
 ***Example 4: To create a duplicate copy of students table including structure and data.***
+- Use `AS SELECT` to copy the data (either selective or total) or table structure to a new table. 
+
 ```sql
 CREATE TABLE IF NOT EXISTS dup_students1
 AS SELECT * FROM  students;
@@ -147,10 +152,15 @@ DESCRIBE students;
 ```
 
 ### DROP TABLE
-- The `DROP TABLE` statement is used to delete an existing table in a database.
+- The `DROP TABLE` statement is used to delete one or more tables from an existing database. 
+- It removes all the data and table definition from the database.
+
+
 ***Example: To drop the table students***
 ```sql
 DROP TABLE students;
+# to drop multiple tables, use comman and type table names that you want to drop 
+drop table newauthor, copy_book_rec;
 ```
 
 ### TRUNCATE TABLE
