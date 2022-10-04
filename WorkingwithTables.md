@@ -315,6 +315,3 @@ drop table newauthor, copy_book_rec;
 ```sql
 TRUNCATE TABLE students_age2;
 ```
-
-
-### SELECT: To retrieve rows from one or more tables
