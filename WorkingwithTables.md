@@ -15,10 +15,10 @@ column_name3 data_type(size),
 ...
 );
 ```
-***Example 1: To create a table named teacher***
+***Example 1: To create a table named author***
 
 ```sql
-# Creating a table named author
+# you need to select the database to work with, I am going to use mydb1
 use mydb1;
 CREATE TABLE author 
 (
