@@ -142,11 +142,20 @@ insert into students_age2(fname,lname,age,city,country) values
 #to fetch all records from the table
 select * from students_age2;
 ```
+***Example 8: CREATE TEMPORARY TABLE.***
+
+- `TEMPORARY` keyword can be used to create a temporary table. 
+- TEMPORARY table is only visible to the current connection, and dropped automatically with the connection closed.
+
+```sql
+CREATE TEMPORARY TABLE temp1 SELECT * FROM students_age2;
+```
 
 ### DESCRIBE [table_name]
 - Describes  the columns and default values for a table. 
 
 ***Example: To describe the table students***
+
 ```sql
 DESCRIBE students;
 ```
