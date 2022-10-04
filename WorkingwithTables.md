@@ -15,7 +15,7 @@ column_name3 data_type(size),
 ...
 );
 ```
-***Example 1: To create a table named author***
+***Example 1: To create a table named author including columns aut_id, aut_fname, country, home_city, created_at***
 
 ```sql
 # you need to select the database to work with, I am going to use mydb1
@@ -28,6 +28,22 @@ country VARCHAR(25) NOT NULL,
 home_city VARCHAR(25),
 created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
+```
+***Example 2: To create a table named students including columns student_id,fname, lname, and country.***
+
+```sql
+CREATE TABLE students( 
+student_id INT AUTO_INCREMENT PRIMARY KEY, 
+fname varchar(100),
+lname varchar(100),
+country varchar(100),
+);
+```
+
+***Example 3: To create the structure of a table dup_students similar to countries.***
+```sql
+CREATE TABLE IF NOT EXISTS dup_students
+LIKE students;
 ```
 ### DESCRIBE [table_name];
 ### DROP TABLE
