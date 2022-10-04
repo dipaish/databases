@@ -45,7 +45,20 @@ country varchar(100),
 CREATE TABLE IF NOT EXISTS dup_students
 LIKE students;
 ```
-### DESCRIBE [table_name];
+
+***Example 4: To create a duplicate copy of students table including structure and data.***
+```sql
+CREATE TABLE IF NOT EXISTS dup_students1
+AS SELECT * FROM  students;
+```
+
+### DESCRIBE [table_name]
+- Describes  the columns and default values for a table. 
+
+***Example: To describe the table students***
+```sql
+DESCRIBE students;
+```
 ### DROP TABLE
 ### ALTER TABLE
 ### INSERT INTO  <table_name> values(value1,value2,....);
