@@ -23,8 +23,8 @@ topnav_dropdowns:
           url: /update
         - title: Delete
           url: /delete
-topnav:
-- title: Topnav
+topnav1:
+- title: Topnav1
   items:
     - title: Joins
       url: /joins
