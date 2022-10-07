@@ -178,6 +178,8 @@ You may use any of the following options:
 - In the grade table, **StudentId** is a **foreign key**.
 - In order to combine information from two tables, there muse be primary/foreign key pair.
 
+***Read More on Foreign Key: https://dev.mysql.com/doc/refman/8.0/en/create-table-foreign-keys.html***
+
 ### ENTITY RELATIONSHIP DIAGRAM
 - It is a top-down technique for visualizing and understanding the entities and the relationships between them. 
 - An **entity–relationship diagram (or ER diagram)** describes 
