@@ -87,15 +87,76 @@ SELECT 	fname,lname,city FROM student;
 ```
 ***Example 3: To retrieve data from all columns.***
 
+- You can either type in all column names separated with commas or use * sign.
+
+```sql
+# to retrieve all columns from the table student
+SELECT * FROM student;
+```
+
 ***Exmaple 4: To retrieve data with ORDER BY clause.***
+- On retrieving records, the order of the result set is unspecified. 
+- To specify the order of your data(records in a result set), you can use ORDER BY clause.
+- The order can be  ascending (ASC) or descending (DESC)
+- To order in ascensing order, you can simply use `order by`. 
+
+```sql
+/* to retrieve all columns from the table student & order the records by firstname in ascending order.
+*/
+SELECT * FROM student ORDER BY fname;
+
+/* to retrieve all columns from the table student & order the records by firstname in descending order. */
+
+SELECT * FROM student ORDER BY fname DESC;
+
+/* to retrieve all columns from the table student & order the records by firstname in descending order and last name in ascending order. */
+
+SELECT * FROM student ORDER BY fname DESC, lname ASC;
+
+```
 
 ***Exmaple 5: To retrieve data with WHERE clause.***
 
+- The WHERE clause allows you to specify a condition for retrieving records for instance you can retrieve sutdents from Helsinki. 
+- The WHERE clause is also when updating and deleting records to specify which record to update or delete.
+- You can use operators such as `AND`, `OR`, `IN`, `NOT IN`, `BETWEEN`, `LIKE`, `IS NULL` with the **WHERE clause**
+
+```sql
+# to retrieve all columns from the table student who are from Helsinki.
+SELECT * FROM student WHERE city="Helsinki";
+
+# to retrieve all male students from Helsinki - AND
+SELECT * FROM student 
+WHERE city="Helsinki" AND
+gender='M';
+
+# to retrieve all  students from Helsinki or Kerava - OR 
+SELECT * FROM student 
+WHERE city="Helsinki" or
+city="Kerava"; 
+
+# to retrieve teachers from teacher table whose salary is between 3000 - 3500 - BETWEEN
+SELECT * FROM teachers
+WHERE salary between 3000 and 4000;  
+
+# you can also user order by to order based on salaries
+SELECT * FROM teachers
+WHERE salary between 3000 and 4000
+order by salary;  
+
+# to retrieve all students using IN operator who are located in Helsinki, Kerava or Espoo. 
+SELECT * FROM student 
+WHERE city IN ('Helsinki','Kerava','Espoo') ORDER BY city;
+
+# to retrive missing or unkwnown value, you can use the 'IS NULL' operator. 
+# null does not refer to an empty value, 0 or an empty string. 
+# to retrive if teacherid is missing the course table. 
+SELECT * FROM course 
+WHERE teacherId IS NULL;
+
+
+```
 ***Exmaple 6: To retrieve data with DISTINCT clause.***
-
-***Exmaple 7: To retrieve data with AND operator.***
-
-***Exmaple 8: To retrieve data with OR operator.***
 
 ***Exmaple 8: To retrieve data with IN operator.***
 
