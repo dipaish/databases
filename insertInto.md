@@ -52,11 +52,50 @@ INSERT INTO table_name VALUES
 ## Databases Import & Export
 
 ## SELECT 
-- The `SELECT` statement is used to retrieve recors from one or more tables.
+- The `SELECT` statement is used to retrieve records from one or more tables.
+- The query begins with the `SELECT` keyword, specify the columns names that you want to retrieve or use * to get all columns. 
+- FROM: Specify the table FROM WHICH data is to br retrieved.
+- WHERE: You may also specify conditions based on which the data is retrieved. 
+
 ***Syntax***
 ```sql
 SELECT [ALL or specific column(s)]  FROM TableName [WHERE conditions];
 ```
+> We will use a sample database to practice retrieval of Data. Use the following SQL file to **import** the required database into your database server. 
+[Sample Database](/sampleDb.sql)
+
+**Sample Database - ER Diagram** 
+
+It is always important to get familiar with the database that you are working on. 
+![Sample Database Diagram](/assets/images/dmodel.png)
+
+Example 1: To retrieve data from a single column.
+
+
+
+Example 2: To retrieve data from multiple columns.
+
+Example 3: To retrieve data from all columns.
+
+Exmaple 4: To retrieve data with ORDER BY clause
+
+Exmaple 5: To retrieve data with WHERE clause
+
+Exmaple 6: To retrieve data with DISTINCT clause
+
+Exmaple 7: To retrieve data with AND operator
+
+Exmaple 8: To retrieve data with OR operator
+
+Exmaple 8: To retrieve data with IN operator
+
+NOT IN 
+BETWEEN 
+LIKE
+LIMIT
+IS NULL
+
+
 ## ALTER 
 
 
