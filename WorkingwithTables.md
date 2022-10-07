@@ -112,6 +112,21 @@ ALTER TABLE author
 DROP PRIMARY KEY;
 ```
 
+- If a columns has auto_increment then you first need to modify the column and drop the autoincrement
+```sql
+CREATE TABLE table_9 ( 
+COL1 int auto_increment,
+COL2 int,
+COL3 varchar(40),  
+PRIMARY KEY (COL1, COL2));
+describe table_9;
+# lets try to drop the primary key, it won't delete 
+ALTER TABLE table_9 DROP PRIMARY KEY;
+# LETS REMOVE THE AUTOINCREMENT FROM COL1
+ALTER TABLE table_9 MODIFY COL1 INT NOT NULL;
+#LETS REMOVE THE PRIMARY KEY
+ALTER TABLE table_9 DROP PRIMARY KEY;
+```
 ### CREATE TABLE with COMPOSITE KEY
 - Composite key is simply PRIMARY KEY on multiple columns 
 - Combination of two or more columns for uniquely identifying each row in the table
@@ -284,6 +299,32 @@ lname varchar(100),
 country varchar(100),
 email varchar(100) NOT NULL UNIQUE
 );
+```
+- To define Unique constraint on multiple columns
+```sql
+CREATE TABLE table5 (  
+    id int auto_increment primary key,   
+    name varchar(50),   
+    email varchar(50), 
+    phonenumber varchar(10),
+    constraint uk_emphon unique (email, phonenumber)
+);  
+#to check if we have successfully added unique contstraints to the table
+show index from table5;
+#you may check by inserting duplicate values for email & phonenumber columns
+```
+- Adding Unique Key with Alter table statement
+
+```sql
+#Syntax 
+ALTER TABLE table_name ADD CONSTRAINT constraint_name UNIQUE(columns);
+```
+- Dropping Unique key
+```sql
+# Syntax: ALTER TABLE table_name  DROP INDEX constraint_name;
+ALTER TABLE table5 DROP INDEX uk_emphon;
+# Dropping Unique Key without the constraint name
+ALTER TABLE table4 DROP INDEX Email;
 ```
 
 ### DESCRIBE [table_name]
