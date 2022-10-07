@@ -174,8 +174,8 @@ You may use any of the following options:
 
 - In the above table,the **StudentId** attribute is used to avoid duplicates because there can be two students with same first and last name.
 - To access name or student’s detail info, you have to access **StudentInfo** table
-- StudentId is the **primary key** of the **StudentInfo** table
-- In the grade table, **StudentId** is a **foreign key**.
+- StudentId is the **primary key** of the **StudentInfo** table. This is referred to as **parent table.**
+- In the grade table, **StudentId** is a **foreign key**. This is referred to as **child table.**
 - In order to combine information from two tables, there muse be primary/foreign key pair.
 
 ***Read More on Foreign Key: https://dev.mysql.com/doc/refman/8.0/en/create-table-foreign-keys.html***
