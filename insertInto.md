@@ -148,42 +148,54 @@ order by salary;
 SELECT * FROM student 
 WHERE city IN ('Helsinki','Kerava','Espoo') ORDER BY city;
 
-# to retrive missing or unkwnown value, you can use the 'IS NULL' operator. 
+# to retrive missing or unkwnown value, you can use  'IS NULL' operator. 
 # null does not refer to an empty value, 0 or an empty string. 
 # to retrive if teacherid is missing the course table. 
 SELECT * FROM course 
 WHERE teacherId IS NULL;
+```
+### LIKE
+- It is used with WHERE clause to define a pattern. 
+- Two wildcard characters are available to define a pattern 
+    - % : To match any string of zero or many characters. Example: `d%` matches all records starting with d
+    - _ : to match a single character. Example: `d_` matches all records starting with d and is followed by any single character.   
 
+```sql
+# to retrieve all students whose first name starts with `L` from the table student
+SELECT * FROM student where fname like 'l%';
+
+# to retrieve all students whose last name ends with `ka` from the table student
+SELECT * FROM student where lname like '%ka';
+
+/* to retrieve all students whose last name starts with `l` and contain any character before i which is then followed by any number of characters. */
+
+SELECT * FROM student where lname like 'l_i%';
 
 ```
-***Exmaple 6: To retrieve data with DISTINCT clause.***
 
-***Exmaple 8: To retrieve data with IN operator.***
+## LIMIT
+- The LIMIT clause will limit the number of rows that are to be returned. 
+- It should always be used with ORDER BY clause as there can be issues because by default the select statement returns rows in an unspecified order which can result in unpredictable returns.
 
-NOT IN 
-BETWEEN 
-LIKE
-LIMIT
-IS NULL
+```sql
+# it will get only 3 records
+SELECT * FROM student ORDER BY lname LIMIT 3;
 
-
-## ALTER 
-
+# it will get only 4 records
+SELECT * FROM student ORDER BY lname LIMIT 4;
 
 
-## Update 
+# LIMIT 2, 3 : it means it will start after the second row and will get 3 records
+SELECT * FROM student
+ORDER BY lname    
+LIMIT 2, 3;
+```
 
-## Delete 
-
-## Joins 
-
-## Functions
-
-### Aggregate Functions
-
-## INDEX
-
-## VIEW
-
-## User Management
-
+## DISTINCT 
+- It is used to return distinct values
+```sql
+# this gets distinct cities from the student table
+SELECT DISTINCT city FROM student;
+# the count function is used to count the distinct cities from student table
+SELECT COUNT(DISTINCT city) FROM student;
+```
