@@ -69,25 +69,35 @@ SELECT [ALL or specific column(s)]  FROM TableName [WHERE conditions];
 It is always important to get familiar with the database that you are working on. 
 ![Sample Database Diagram](/assets/images/dmodel.png)
 
-Example 1: To retrieve data from a single column.
+***Example 1: To retrieve data from a single column.***
+- Specify the column name and the table from which you want to retrieve data
 
+```sql
+# to retrieve fname from the table student
+SELECT 	fname FROM student;
+```
 
+***Example 2: To retrieve data from multiple columns.***
 
-Example 2: To retrieve data from multiple columns.
+- Specify column names separated by comma(,) and the table from which you want to retrieve data
 
-Example 3: To retrieve data from all columns.
+```sql
+# to retrieve fname,lname,city from the table student
+SELECT 	fname,lname,city FROM student;
+```
+***Example 3: To retrieve data from all columns.***
 
-Exmaple 4: To retrieve data with ORDER BY clause
+***Exmaple 4: To retrieve data with ORDER BY clause.***
 
-Exmaple 5: To retrieve data with WHERE clause
+***Exmaple 5: To retrieve data with WHERE clause.***
 
-Exmaple 6: To retrieve data with DISTINCT clause
+***Exmaple 6: To retrieve data with DISTINCT clause.***
 
-Exmaple 7: To retrieve data with AND operator
+***Exmaple 7: To retrieve data with AND operator.***
 
-Exmaple 8: To retrieve data with OR operator
+***Exmaple 8: To retrieve data with OR operator.***
 
-Exmaple 8: To retrieve data with IN operator
+***Exmaple 8: To retrieve data with IN operator.***
 
 NOT IN 
 BETWEEN 
