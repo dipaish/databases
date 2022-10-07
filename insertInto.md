@@ -248,19 +248,26 @@ insert into grades (name, course_name, grade) values
 
 #check all records have been inserted into the table
 select * from grades;
+
 # create temporary table pekka_grades and list all grades for Pekka
 create temporary table pekka_grades
 select * from grades where name='Pekka';
+
 #check you have listed all grades for Pekka
 select * from pekka_grades;
+
 #select grades for the course Windows OS
 select * from grades where course_name='Windows OS';
+
 # find students who have failed a course or courses
 select * from grades where grade=0;
+
 # find students whose grade is greater than 3 
 select * from grades where grade>3;
+
 # Use AVG(grade) and group by to get the average grade for all students
 select name, AVG(grade) as 'Average Grade' from grades group by name;
+
 # Calculate the average grade for each course
 select course_name, AVG(grade) from grades group by course_name;
 ```
