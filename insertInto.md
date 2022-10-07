@@ -199,3 +199,68 @@ SELECT DISTINCT city FROM student;
 # the count function is used to count the distinct cities from student table
 SELECT COUNT(DISTINCT city) FROM student;
 ```
+
+## Operators: 
+- **Arithmetic Operators:**  + - * / % 
+```sql
+select 5+5;
+select 5*5;
+select 5/5;
+```
+- **Comparison Operators:** 
+= Equal to, != not equal to, <> not equal to, >, <, >= ,<= ,!< Not less than , !> not greater than
+
+```sql
+# Create the table grade 
+create table grades (
+id INT AUTO_INCREMENT PRIMARY KEY,
+name VARCHAR(255) NOT NULL,
+course_name VARCHAR(255) NOT NULL,
+grade int Not Null
+); 
+# insert records as below
+insert into grades (name, course_name, grade) values
+('Pekka', 'Windows OS', 5),
+('Pekka', 'Data Processing ', 4),
+('Pekka', 'Basics of Programming', 3),
+('Pekka', 'Finnish 1', 2),
+('Pekka', 'Orientation Studies', 3),
+('John', 'Windows OS', 1),
+('John', 'Data Processing ', 2),
+('John', 'Basics of Programming', 3),
+('John', 'Finnish 1', 4),
+('John', 'Orientation Studies', 5),
+('Markku', 'Windows OS', 0),
+('Markku', 'Data Processing ', 0),
+('Markku', 'Basics of Programming', 1),
+('Markku', 'Finnish 1', 2),
+('Markku', 'Orientation Studies', 1),
+('Niina', 'Windows OS', 3),
+('Niina', 'Data Processing ', 1),
+('Niina', 'Basics of Programming', 4),
+('Niina', 'Finnish 1', 2),
+('Niina', 'Orientation Studies', 1),
+('Sari', 'Windows OS', 4),
+('Sari', 'Data Processing ', 3),
+('Sari', 'Basics of Programming', 2),
+('Sari', 'Finnish 1', 1),
+('Sari', 'Orientation Studies', 0);
+
+#check all records have been inserted into the table
+select * from grades;
+# create temporary table pekka_grades and list all grades for Pekka
+create temporary table pekka_grades
+select * from grades where name='Pekka';
+#check you have listed all grades for Pekka
+select * from pekka_grades;
+#select grades for the course Windows OS
+select * from grades where course_name='Windows OS';
+# find students who have failed a course or courses
+select * from grades where grade=0;
+# find students whose grade is greater than 3 
+select * from grades where grade>3;
+# Use AVG(grade) and group by to get the average grade for all students
+select name, AVG(grade) as 'Average Grade' from grades group by name;
+# Calculate the average grade for each course
+select course_name, AVG(grade) from grades group by course_name;
+```

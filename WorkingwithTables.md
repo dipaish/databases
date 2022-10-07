@@ -172,6 +172,10 @@ country varchar(100)
 );
 
 # Dropping a foreign key: In MySQL Workbench, you can find the foreign key name by clicking on Foreign Keys 
+/* 
+Syntax: ALTER TABLE tablename
+DROP FOREIGN KEY constraint_name;
+*/
 ALTER TABLE courses
 DROP FOREIGN KEY foreignKeyName;
 
@@ -183,6 +187,9 @@ ADD FOREIGN KEY (teacher_id) REFERENCES teachers(teacher_id);
 ALTER TABLE courses
 ADD CONSTRAINT FK_teacher_id
 FOREIGN KEY (teacher_id) REFERENCES teachers(teacher_id);
+
+# Recommened reading on foreign key: https://www.mysqltutorial.org/mysql-foreign-key/ 
+
 ```
 > Note, when you specify foreign keys, using tools such as phpmyadmin will generate ER diagram. 
 - Get to [localhost:81](http://localhost:81)
