@@ -48,13 +48,32 @@ INSERT INTO table_name VALUES
     (15,'test'),
     (16,'hello'),
 ```
-## SELECT 
-- 
 
+## Databases Import & Export
+
+## SELECT 
+- The `SELECT` statement is used to retrieve recors from one or more tables.
+***Syntax***
+```sql
+SELECT [ALL or specific column(s)]  FROM TableName [WHERE conditions];
+```
 ## ALTER 
+
+
 
 ## Update 
 
 ## Delete 
 
-## Joins & Functions
+## Joins 
+
+## Functions
+
+### Aggregate Functions
+
+## INDEX
+
+## VIEW
+
+## User Management
+
