@@ -17,15 +17,21 @@ topnav_dropdowns:
       folderitems:
         - title: Create Table
           url: /WorkingwithTables
-        - title: Insert into Table
+        - title: Insert into
           url: /insertInto
-        - title: SELECT Records
+        - title: SELECT & Operators
           url: /select
-        - title: Alter Table
+        - title: Datbase Import/imex
+          url: /select
+        - title: Alter, Update & Delete
           url: /alterTable
-        - title: Update
-          url: /update
-        - title: Delete
-          url: /delete
+         - title: Index
+          url: /myindex
+        - title: Functions
+          url: /functions
+        - title: Joins
+          url: /joins
+        - title: View
+          url: /view
   
 
