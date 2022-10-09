@@ -21,11 +21,11 @@ topnav_dropdowns:
           url: /insertInto
         - title: SELECT & Operators
           url: /select
-        - title: Datbase Import/imex
-          url: /select
+        - title: Datbase Import & Export
+          url: /imex
         - title: Alter, Update & Delete
           url: /alterTable
-         - title: Index
+        - title: Index
           url: /myindex
         - title: Functions
           url: /functions
