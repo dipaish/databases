@@ -299,7 +299,7 @@ The table student_info does not meet the requirements of 1NF because
 
 ## Intergrity Rules
 - Integrity rules are very important for a good database design. 
-- RDBMS enforce entigrity rules automat
+- RDBMS enforce integrity rules automatically.
 
 ### Entity integrity
 - All primary key entries are unique and not null. 
