@@ -31,7 +31,7 @@ topnav_dropdowns:
           url: /functions
         - title: Joins
           url: /joins
-        - title: View
-          url: /view
+        #- title: View
+        #  url: /view
   
 
