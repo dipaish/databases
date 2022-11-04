@@ -29,7 +29,7 @@ INSERT INTO members(name)
 VALUES('John'),('Jane'),('Mary'),('David'),('Amelia');
  
 INSERT INTO committees(name)
-VALUES('John'),('Mary'),('Amelia'),('Joe');
+VALUES('com1'),('com2'),('com3'),('com4');
 
 #lets check data from tables 
 SELECT * FROM members;
