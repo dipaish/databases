@@ -4,8 +4,8 @@
     - To create or destroy indexes 
     - To change the type of existing columns 
     - To rename columns or the table itself
-```sql
 
+```sql
 # Create a table "mytable "
 CREATE TABLE mytable (
 id INT,
