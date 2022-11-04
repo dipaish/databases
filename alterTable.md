@@ -1,6 +1,66 @@
-## ALTER 
+## ALTER Table 
+- Alter table command is used to change the structure of an existing table
+    - To add or delete columns 
+    - To create or destroy indexes 
+    - To change the type of existing columns 
+    - To rename columns or the table itself
+```sql
 
+# Create a table "mytable "
+CREATE TABLE mytable (
+id INT,
+name VARCHAR(50)
+ );
+ 
+ # to rename the table : mytable >> table1
+ ALTER TABLE mytable RENAME table1;
+ 
+ # to change the data type of a column : lets change the data type of id column from INTEGER to TINYINT
+ALTER TABLE table1 MODIFY id TINYINT NOT NULL;
 
+# renaming the column name, name to fullname
+ALTER TABLE table1 CHANGE name fullname VARCHAR(25);
+
+# Adding a new TimeStamp column : by default it is added as the last column
+ALTER TABLE table1 ADD createdon TIMESTAMP;
+
+# adding a new column as the first column 
+ALTER TABLE table1
+ADD groupid varchar(10)  FIRST;
+
+# adding a new column or columns after a specific column 
+ALTER TABLE table1
+ADD emailid varchar(50)  AFTER fullname,
+ADD city varchar(50)  AFTER emailid;
+
+# in table1 we do not have a primary key so lets make id as a primary key
+ALTER TABLE table1
+ADD PRIMARY KEY (id);
+
+# dropping a primary key
+ALTER TABLE table1
+DROP PRIMARY KEY;
+
+#Dropping a column 
+ALTER TABLE table1 drop createdon;
+
+# ALter changing column definition
+# To change column ”name” from char(20) to char(40)
+ALTER TABLE test MODIFY name CHAR(40);
+
+# To change column ”name”  into ”fname” from char(40) to char (30)
+ALTER TABLE test CHANGE name fname char(30);
+
+# To make id NOT NULL with default value
+ALTER TABLE test MODIFY id INT NOT NULL DEFAULT 1000;
+
+# Changing column’s default value
+ALTER TABLE test ALTER id SET DEFAULT 100;
+
+# To remove default constraint
+ALTER TABLE test ALTER id DROP DEFAULT;
+
+```
 ## Update 
 - UPDATE statement is used to update columns of existing rows in a table with new values.
 - For a single table, the UPDATE statement updates columns of existing rows in the named table with new values.
