@@ -126,6 +126,6 @@ delete from table1 where id = 1;
 ```
 
 ## SQL cheat sheet 
-- https://cdn.sqltutorial.org/wp-content/uploads/2016/04/SQL-cheat-sheet.pdf
+- [Link](https://learnsql.com/blog/sql-basics-cheat-sheet/sql-basics-cheat-sheet-a4.pdf)
 
 
