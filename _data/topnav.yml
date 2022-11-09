@@ -5,13 +5,14 @@ topnav:
   items:
     - title: Database Design
       url: /databaseDesign
+      - title: User Management
+        url: /usermanagement
    ## - title: Joins
    ##   url: /joins
    ## - title: Functions
    ##   url: /functions
 #Topnav dropdowns
-  - title: User Management
-    url: /usermanagement
+ 
 topnav_dropdowns:
 - title: Topnav dropdowns
   folders:
