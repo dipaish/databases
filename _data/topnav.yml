@@ -5,8 +5,8 @@ topnav:
   items:
     - title: Database Design
       url: /databaseDesign
-      - title: User Management
-        url: /usermanagement
+    - title: User Management
+      url: /usermanagement
    ## - title: Joins
    ##   url: /joins
    ## - title: Functions
