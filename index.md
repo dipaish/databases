@@ -56,7 +56,7 @@ For Mac Users:
 curl -o docker-compose.yml https://raw.githubusercontent.com/dipaish/databases/master/assets/images/docker-compose.yml
 ```
 
-**If you are not able to successfully exectue the above commands, you can copy the content below and save it as docker-compose.yml**
+**If you are not able to successfully execute the above commands, you can copy the content below and save it as docker-compose.yml**
 
 ```ps
 version: '3'
