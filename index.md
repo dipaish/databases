@@ -50,7 +50,7 @@ Step 4: Run the following command to get the docker-compose file. https://raw.gi
 PS D:\dataService> Invoke-WebRequest -Uri https://raw.githubusercontent.com/dipaish/databases/master/assets/images/docker-compose.yml -OutFile docker-compose.yml
 ```
 
-For Mack Users: 
+For Mac Users: 
 
 ```ps
 curl -o docker-compose.yml https://raw.githubusercontent.com/dipaish/databases/master/assets/images/docker-compose.yml
