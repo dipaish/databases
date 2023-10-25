@@ -62,14 +62,14 @@ curl -o docker-compose.yml https://raw.githubusercontent.com/dipaish/databases/m
 version: '3'
 services:
   db: #database service
-    image: mysql:latest
+    image: mysql:8.0.34
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: password
     ports:
       - "6033:3306"
     volumes:
-      - dbdata:/var/lib/mysql
+      - dbdata1:/var/lib/mysql
   phpmyadmin: #another tool to manage database server
     depends_on:
       - db
@@ -80,8 +80,7 @@ services:
     environment:
       PMA_HOST: db
 volumes:
-  dbdata:
-
+  dbdata1:
 ```
 
 Step 5: Run the docker compose file to set up the MySQL database server. 
