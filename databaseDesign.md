@@ -35,7 +35,6 @@
 - Easier deployment of new applications.
 - Provides mechanisms for data backup and recovery.
 
-
 ### What is a Relational Database ?
 - A relational database is based on the ***relational data model.***
 - A relational database stores data in the form of rows and columns that forms an ***entity(table).***
