@@ -51,7 +51,7 @@
 
 ## Database Design: 
 ### What is Data Modeling? 
-> It is a process to define and analyze data requirements to support a certain busines sprocess or to serve a purpose. 
+> It is a process to define and analyze data requirements to support a certain business process or to serve a purpose. 
 
 ###  Database Design Process
 
@@ -88,7 +88,6 @@
 
 **End result: ER Diagram / Database Model**
 
----
 ### Tools for Data modeling
 You may use any of the following options:
 - A piece of paper and a pen to model your database. 
@@ -99,10 +98,10 @@ You may use any of the following options:
 ***Before creating an actual database, you produce three different types of data models:***
 
 #### 1. ***Conceptual Data Model***
-- It is a highl level model.
+- It is a high level model.
 - Think about the data requirements: what data your system contains? Take into account your stakeholders: application users & scope of your application 
 - You are basically explaining the concept based on your data requirements & the relationship between the objects
--  The end result of the conceputal data model will be names such as `student`, `course`, `teacher`
+-  The end result of the conceptual data model will be names such as `student`, `course`, `teacher`
 - The relationship between the objects are simply shown by drawing a line between the objects.
 - This model is done for wider audience that is it should be easy to understand for anyone looking the diagram. 
 
@@ -124,7 +123,7 @@ You may use any of the following options:
 
 #### 3. ***Physical Data Model***
 - It is describing a database specific implementation of the data model. 
-- It is used to creata a database and required tables.
+- It is used to create a database and required tables.
 - It includes the name of the table & column names with [Data Types](https://dev.mysql.com/doc/refman/8.0/en/data-types.html). 
 - ***Primary keys, foreign keys, views*** etc are also defined. 
     
@@ -132,7 +131,7 @@ You may use any of the following options:
 
 ![Example of a Physical Data Model](assets/images/pmodel.png)
 
-> Note: We did not specificy primary or foreign key. Once we learn them, we will start to use them.
+> Note: We did not specify primary or foreign key. Once we learn them, we will start to use them.
 
 ### PRIMARY KEY (PK)
 
@@ -207,7 +206,7 @@ You may use any of the following options:
 ### One-to-many relationship
 - **One-to-many** refers to the association between two entities(tables) A & B in which one element from A is linked to multiple elements of B.
 - In the **relational model**, it means that one row in a table is linked with many rows in another table and vice versa.
-- It is the most commmon type of relationship. 
+- It is the most common type of relationship. 
 ![One-to-many relationship](assets/images/om.png)
 > Examples:
 
@@ -240,7 +239,7 @@ reduce the **redundancy of data** in the table and to improve the **integrity of
     - The duplicate data results inconsistency problems during inserting, updating and deleting operations. 
 > Note: if the table is not normalized, there will be problems when updating, inserting and deleting data. 
 
-***You can start to check your tables based on the following normalizatoin rules (Normal Forms)***
+***You can start to check your tables based on the following normalization rules (Normal Forms)***
 ### First Normal Form (1NF)
 - It is the first stage of the normalization process. 
 - A table is in **1NF**  if 
@@ -260,7 +259,7 @@ The table student_info does not meet the requirements of 1NF because
 
 ***Lets do the required changes so that student_info table is in 1NF***
 - Break full name into two columns fname & lname. 
-- Remove course column, we will need a separte table for course enrollment.
+- Remove course column, we will need a separate table for course enrollment.
 - **The table below meets the 1NF requirements**
 
 ![1NF](assets/images/1nfc1.png)
@@ -297,20 +296,20 @@ The table student_info does not meet the requirements of 1NF because
 
 > ***On normalizing your data to third form (3NF), anomalies are eliminated***
 
-## Intergrity Rules
+## Integrity Rules
 - Integrity rules are very important for a good database design. 
 - RDBMS enforce integrity rules automatically.
 
 ### Entity integrity
 - All primary key entries are unique and not null. 
-- All entities must have some sort of unique idetification.
+- All entities must have some sort of unique identification.
 - For a composite key which is made up of several columns, none of the column can contain Null.
-- All foreign key values are properly referencing primary key valuues.
+- All foreign key values are properly referencing primary key values.
 
 ### Referential Integrity
-- The referential integrity is specified between tables (relationship) to ensure the consistencey among tuples(records) of the tables. 
+- The referential integrity is specified between tables (relationship) to ensure the consistency among tuples(records) of the tables. 
 - Each foreign key in a table(child table) must match to a primary key in the referenced table (parent table)
-- Inserting with a foreign key is only possible if the value exists in the partent table.
+- Inserting with a foreign key is only possible if the value exists in the parent table.
 
 ## Example 1: Simple Grading System 
 
