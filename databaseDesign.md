@@ -81,10 +81,10 @@
 **End result: ER Diagram / Database Model**
 
 **Step 4: Normalize your design**
-**You may do the following activities**
-    - Check atleast your table meets 3NF
-    - If required, break bigger tables into smaller ones
-    - You might also need to add more columns
+***You may do the following activities***
+    - Analyze your tables to ensure  they meet the criteria of 3NF.
+    - Break down larger tables into smaller ones to reduce redundancy.
+    - Evaluate your data structure for potential data dependencies that can be resolved by adding columns or creating separate tables.
 
 **End result: ER Diagram / Database Model**
 
