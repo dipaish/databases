@@ -197,6 +197,20 @@ SELECT DISTINCT city FROM student;
 SELECT COUNT(DISTINCT city) FROM student;
 ```
 
+## AS
+
+- The "AS" keyword is used to rename a column or a table in the result set of a query. 
+- It is often used to provide a more meaningful name to a column or table. 
+
+```sql
+# Example 1 
+SELECT column_name AS alias_name
+FROM table_name;
+# Example 2: 
+SELECT 	fname AS "First Name", lname as "Last Name", city FROM student;
+```
+
+
 ## Operators: 
 - **Arithmetic Operators:**  + - * / % 
 ```sql
