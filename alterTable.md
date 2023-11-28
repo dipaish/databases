@@ -11,11 +11,14 @@ CREATE TABLE mytable (
 id INT,
 name VARCHAR(50)
  );
- 
+
  # to rename the table : mytable >> table1
+ ALTER TABLE mytable RENAME to table1;
+ 
+ # You can also rename as below:  mytable >> table1
  ALTER TABLE mytable RENAME table1;
  
- # to change the data type of a column : lets change the data type of id column from INTEGER to TINYINT
+# to change the data type of a column : lets change the data type of id column from INTEGER to TINYINT
 ALTER TABLE table1 MODIFY id TINYINT NOT NULL;
 
 # renaming the column name, name to fullname
@@ -42,7 +45,7 @@ ALTER TABLE table1
 DROP PRIMARY KEY;
 
 #Dropping a column 
-ALTER TABLE table1 drop createdon;
+ALTER TABLE table1 drop column createdon;
 
 # ALter changing column definition
 # To change column ”name” from char(20) to char(40)
