@@ -153,38 +153,6 @@
     });
     </script>
     
-    <script>
-    // Imports
-import copy from "copy-to-clipboard";
-import { onMount } from "svelte";
-/**
- * This function will go through all the 'pre' elements
- * on the page and add a copy button to them.
- */
-onMount(() => {
-  const codeBlocks = document.querySelectorAll("code");
-  codeBlocks.forEach((block) => {
-    const copyPrompt = document.createElement("div");
-    copyPrompt.className = "copy-prompt";
-    const copyPromptText = document.createElement("p");
-    copyPromptText.innerHTML = "👆 Click here to copy";
-    const copyIcon = document.createElement("img");
-    copyIcon.src = "/icons/ic_copy.svg";
-    copyPrompt.appendChild(copyIcon);
-    copyPrompt.appendChild(copyPromptText);
-    block.appendChild(copyPrompt);
-    block.querySelector(".copy-prompt > p").addEventListener("click", (evt) => {
-      copy(block.querySelector("code").textContent);
-      block.querySelector(".copy-prompt > p").innerHTML = "Copied!";
-      setTimeout(() => {
-        block.querySelector(".copy-prompt > p").innerHTML = "👆 Click to copy";
-      }, 1000);
-    });
-  });
-});
-    
-    
-    </script>
     <div id="toc"></div>
             </div>
             {% assign content_col_size = "col-md-9" %}
