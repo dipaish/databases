@@ -68,7 +68,7 @@ services:
     ports:
       - "6033:3306"
     volumes:
-      - dbdata1:/var/lib/mysql
+      - dbdata:/var/lib/mysql
   phpmyadmin: #another tool to manage database server
     depends_on:
       - db
@@ -79,7 +79,7 @@ services:
     environment:
       PMA_HOST: db
 volumes:
-  dbdata1:
+  dbdata:
 ```
 
 Step 5: Run the docker compose file to set up the MySQL database server. 
