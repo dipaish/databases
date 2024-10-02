@@ -49,7 +49,14 @@ Step 4: Use wget to get the docker-compose file. https://raw.githubusercontent.c
 ```ps
 PS D:\dataService> Invoke-WebRequest -Uri https://raw.githubusercontent.com/dipaish/databases/refs/heads/master/assets/images/docker-compose.yml -OutFile docker-compose.yml
 ```
-**You may also copy the content below and save it as docker-compose.yml**
+
+For Mac Users: 
+
+```ps
+curl -o docker-compose.yml https://raw.githubusercontent.com/dipaish/databases/master/assets/images/docker-compose.yml
+```
+
+**If you are not able to successfully execute the above commands, you can copy the content below and save it as docker-compose.yml**
 
 ```ps
 services:
@@ -61,7 +68,7 @@ services:
     ports:
       - "6033:3306"
     volumes:
-      - dbdata:/var/lib/mysql
+      - dbdata1:/var/lib/mysql
   phpmyadmin: #another tool to manage database server
     depends_on:
       - db
@@ -72,8 +79,7 @@ services:
     environment:
       PMA_HOST: db
 volumes:
-  dbdata:
-
+  dbdata1:
 ```
 
 Step 5: Run the docker compose file to set up the MySQL database server. 

@@ -202,7 +202,7 @@ FOREIGN KEY (teacher_id) REFERENCES teachers(teacher_id);
 - TEMPORARY table is only visible to the current connection, and dropped automatically with the connection closed.
 
 ```sql
-CREATE TEMPORARY TABLE temp1 SELECT * FROM students_age2;
+CREATE TEMPORARY TABLE temp1 AS SELECT * FROM students_age2;
 ```
 
 ### CREATE TABLE with NOT NULL CONSTRAINT
