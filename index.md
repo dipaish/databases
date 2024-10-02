@@ -44,18 +44,17 @@ Step 2: Create a folder anywhere in your PC. (Please do not delete it).
 Step 3: Open the folder with Visual Studio Code. Provided that you have enabled 
 docker related extensions in your VSC. 
 
-Step 4: Use wget to get the docker-compose file. https://raw.githubusercontent.com/dipaish/databases/master/assets/images/docker-compose.yml
+Step 4: Use wget to get the docker-compose file. https://raw.githubusercontent.com/dipaish/databases/refs/heads/master/assets/images/docker-compose.yml
 
 ```ps
-PS D:\dataService> Invoke-WebRequest -Uri https://raw.githubusercontent.com/dipaish/databases/master/assets/images/docker-compose.yml -OutFile docker-compose.yml
+PS D:\dataService> Invoke-WebRequest -Uri https://raw.githubusercontent.com/dipaish/databases/refs/heads/master/assets/images/docker-compose.yml -OutFile docker-compose.yml
 ```
 **You may also copy the content below and save it as docker-compose.yml**
 
 ```ps
-version: '3'
 services:
   db: #database service
-    image: mysql:latest
+    image: mysql:8.0.38
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: password

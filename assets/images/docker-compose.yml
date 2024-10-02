@@ -1,7 +1,6 @@
-version: '3'
 services:
   db: #database service
-    image: mysql:latest
+    image: mysql:8.0.38
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: password
