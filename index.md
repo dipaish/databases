@@ -50,13 +50,6 @@ We need to set up MySQL database servers to create databases. This will also all
 
 ### Step 2:  The README file in the forked repository provides detailed guidelines and instructions to set up the development environment. Follow the guidelines. 
 
-**Some docker commands:**
-- To start a docker container in the background `docker-compose up –d`
-- To list all active containers 
-`Docker ps`
-- To remove all docker containers in the repository `Docker-compose down`
-
-
 ## Installing MySQL Workbench 
 Step 1: Get to this link (https://dev.mysql.com/downloads/workbench/) and download MySQL Workbench **Windows (x86, 64-bit), MSI Installer** & install MySQL Workbench. 
 
