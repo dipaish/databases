@@ -18,74 +18,38 @@
 - Localization (support for several characters set (scandavian characters: Ä Ö Å ), Error messages to clients in many languages)
 - Clients & Tools (Command line programs such as mysqldump & mysqladmin, GUI programs such as MySQL Workbench)
 
-## How to install MySQL 8.0 ?
+## Development Environment Setup 
 
-**Quick Installation Guide**
-- MySQL: available for a number of OS & platforms
-- Types of releases:
-    - ***Development releases***
-        - Newest features
-        - Not recommended for production use
-    - ***General Availability (GA) releases***
-        - Also called production or stable releases
-        - Meant for production use
-        - **Use the most recent GA release (recommended)**
+We need to set up MySQL database servers to create databases. This will also allow us to work with tables and execute SQL queries. In this course, we will use both Docker-based environments locally and GitHub Codespaces for cloud development. For the local environment, we will connect to the database server using MySQL Workbench. In GitHub Codespaces, we will use phpMyAdmin to connect.
 
-**Read More: https://dev.mysql.com/doc/refman/8.0/en/installing.html**
+![Development Environment](images/dbEnvironment.png)
 
-### Installing MySQL 8.0 with Docker in Windows
+### Local Environment (Docker-Based Services)
+
+- **MySQL Database Service**: Accessible at port `6033:3066`
+  - Set your own password in the `.env` file.
+- **phpMyAdmin**: Accessible at `http://localhost:88`
+- **Database Connection Tool**: Use *MySQL Workbench* to connect to the database locally.
+
+### Cloud-Based Environment (GitHub Codespaces)
+
+- **MySQL Database Service**: Accessible at port `6033:3066`
+  - Set your password using *GitHub Secrets*.
+- **phpMyAdmin**: Accessible at `http://localhost:88`
+- **Database Connection Tool**: Use *phpMyAdmin* within the Codespace environment.
+
+
+### Steps to set up the development environment
 
 > Note: Please ensure that you have Docker Desktop installed in your device and the docker engine is running. 
 
-Step 1: Start Docker Desktop & ensure that the Docker Engine is running. 
+### Step 1: Fork the Repository
 
-Step 2: Create a folder anywhere in your PC. (Please do not delete it). 
+1. Sign in to your GitHub account using a browser.
+2. Fork the project to your GitHub account by visiting: [https://github.com/dipaish/mysql-phpmyadmin-docker](https://github.com/dipaish/mysql-phpmyadmin-docker).
 
-Step 3: Open the folder with Visual Studio Code. Provided that you have enabled 
-docker related extensions in your VSC. 
+### Step 2:  The README file in the forked repository provides detailed guidelines and instructions to set up the development environment. Follow the guidelines. 
 
-Step 4: Use wget to get the docker-compose file. https://raw.githubusercontent.com/dipaish/databases/refs/heads/master/assets/images/docker-compose.yml
-
-```ps
-PS D:\dataService> Invoke-WebRequest -Uri https://raw.githubusercontent.com/dipaish/databases/refs/heads/master/assets/images/docker-compose.yml -OutFile docker-compose.yml
-```
-
-For Mac Users: 
-
-```ps
-curl -o docker-compose.yml https://raw.githubusercontent.com/dipaish/databases/refs/heads/master/assets/images/docker-compose.yml
-```
-
-**If you are not able to successfully execute the above commands, you can copy the content below and save it as docker-compose.yml**
-
-```ps
-services:
-  db: #database service
-    image: mysql:8.0.38
-    restart: always
-    environment:
-      MYSQL_ROOT_PASSWORD: password
-    ports:
-      - "6033:3306"
-    volumes:
-      - dbdata:/var/lib/mysql
-  phpmyadmin: #another tool to manage database server
-    depends_on:
-      - db
-    image: phpmyadmin/phpmyadmin
-    restart: always
-    ports:
-      - '81:80'
-    environment:
-      PMA_HOST: db
-volumes:
-  dbdata:
-```
-
-Step 5: Run the docker compose file to set up the MySQL database server. 
-```ps
-PS D:\dataService> docker-compose up -d
-```
 **Some docker commands:**
 - To start a docker container in the background `docker-compose up –d`
 - To list all active containers 
