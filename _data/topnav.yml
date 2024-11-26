@@ -34,6 +34,8 @@ topnav_dropdowns:
           url: /functions
         - title: Joins
           url: /joins
+        - title: SQl Cheat Sheet
+          url: /cheatSheet
         #- title: View
         #  url: /view
   
